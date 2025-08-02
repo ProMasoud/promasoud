@@ -1,5 +1,5 @@
-# Firebase Studio
+# Tavakkoli Portfolio
 
-This is a NextJS starter in Firebase Studio.
+This is a Next.js personal portfolio website for Masoud Tavakkoli, an AI Solutions Engineer & DevOps Specialist.
 
-To get started, take a look at src/app/page.tsx.
+Built with Next.js, Tailwind CSS, ShadCN UI, and Genkit for AI-powered features.
