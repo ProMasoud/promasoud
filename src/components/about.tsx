@@ -1,4 +1,3 @@
-import { ContentRewriter } from './content-rewriter';
 import { Card, CardContent } from '@/components/ui/card';
 
 const aboutText =
@@ -34,7 +33,6 @@ export default function About() {
           </Card>
         </div>
         <div className="md:col-span-2">
-          <ContentRewriter initialContent={aboutText} />
         </div>
       </div>
     </section>
