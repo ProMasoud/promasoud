@@ -301,49 +301,6 @@ export default function Experience() {
               );
             })}
           </div>
-
-          {/* Career Highlights */}
-          <div className="mt-20">
-            <Card className="bg-gradient-to-r from-primary/5 to-blue-500/5 border-primary/20 max-w-4xl mx-auto">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-6 text-center text-primary">
-                  Career Highlights
-                </h3>
-                <div className="grid md:grid-cols-4 gap-6 text-center">
-                  <div>
-                    <div className="text-3xl font-bold text-primary mb-2">10,000+</div>
-                    <div className="text-sm text-muted-foreground">Users Served Globally</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-primary mb-2">$100M+</div>
-                    <div className="text-sm text-muted-foreground">Daily Transactions Secured</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-primary mb-2">70%</div>
-                    <div className="text-sm text-muted-foreground">Cost Reduction Achieved</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-primary mb-2">9+</div>
-                    <div className="text-sm text-muted-foreground">Years Professional Experience</div>
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-3 gap-6 text-center mt-6">
-                  <div>
-                    <div className="text-3xl font-bold text-primary mb-2">4+</div>
-                    <div className="text-sm text-muted-foreground">Countries Worked In</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-primary mb-2">12+</div>
-                    <div className="text-sm text-muted-foreground">Professional Certifications</div>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-primary mb-2">20+</div>
-                    <div className="text-sm text-muted-foreground">Enterprise Projects Delivered</div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </div>
     </section>

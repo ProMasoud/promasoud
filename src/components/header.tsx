@@ -28,13 +28,13 @@ export default function Header() {
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/80 shadow-md backdrop-blur-lg' : 'bg-transparent'
+        isScrolled ? 'bg-black/90 shadow-2xl backdrop-blur-lg border-b border-white/10' : 'bg-black/70 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 font-bold text-lg">
-            <TechIcon name="code" className="h-6 w-6 text-primary" />
+          <Link href="/" className="flex items-center gap-2 font-bold text-lg text-white hover:text-white/80 transition-colors">
+            <TechIcon name="code" className="h-6 w-6 text-white" />
             <span>Masoud Tavakkoli</span>
           </Link>
 
@@ -43,7 +43,7 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                className="text-sm font-medium text-white/80 transition-colors hover:text-white border-b-2 border-transparent hover:border-white/50 pb-1"
               >
                 {link.name}
               </Link>
@@ -53,8 +53,8 @@ export default function Header() {
           <div className="md:hidden">
             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <TechIcon name="menu" className="h-6 w-6" />
+                <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+                  <TechIcon name="menu" className="h-6 w-6 text-white" />
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
               </SheetTrigger>

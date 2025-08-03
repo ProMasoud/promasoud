@@ -1,6 +1,4 @@
 'use client';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 import TechIcon from './tech-icons';
 import { useEffect, useState } from 'react';
 
@@ -89,7 +87,6 @@ const skillCategories = [
 
 export default function Skills() {
   const [isVisible, setIsVisible] = useState(false);
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -113,93 +110,74 @@ export default function Skills() {
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
               Skills & Technologies
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-blue-600 mx-auto rounded-full mb-4" />
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-white/80 max-w-2xl mx-auto">
               A comprehensive toolkit for building scalable, secure, and innovative solutions
             </p>
           </div>
 
-          {/* Skills Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Skills Categories */}
+          <div className="space-y-12">
             {skillCategories.map((category, categoryIndex) => (
-              <Card 
-                key={category.name} 
-                className={`group bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${isVisible ? 'animate-in slide-in-from-bottom' : ''}`}
-                style={{ animationDelay: `${categoryIndex * 200}ms` }}
+              <div 
+                key={category.name}
+                className={`bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl p-6 shadow-lg ${isVisible ? 'animate-in fade-in-50' : 'opacity-0'}`}
+                style={{ animationDelay: `${categoryIndex * 150}ms` }}
               >
-                <CardHeader className="pb-4">
-                  <div className="flex items-center gap-4 mb-2">
-                    <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors duration-300">
-                      <div className="h-8 w-8 text-primary flex items-center justify-center">
-                        <category.icon />
-                      </div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <div className="h-6 w-6 text-primary flex items-center justify-center">
+                      <category.icon />
                     </div>
-                    <CardTitle className="text-xl font-bold">{category.name}</CardTitle>
                   </div>
-                  <div className="h-1 bg-gradient-to-r from-primary/50 to-transparent rounded-full" />
-                </CardHeader>
-                <CardContent>
-                  <TooltipProvider delayDuration={300}>
-                    <div className="grid grid-cols-2 gap-4">
-                      {category.skills.map((skill, skillIndex) => (
-                        <Tooltip key={skill.name}>
-                          <TooltipTrigger asChild>
-                            <div 
-                              className={`flex flex-col items-center gap-3 p-4 rounded-xl border border-border/30 hover:border-primary/50 transition-all duration-300 cursor-pointer group/skill transform hover:scale-105 ${hoveredSkill === skill.name ? 'bg-primary/5 border-primary/50' : 'hover:bg-muted/50'}`}
-                              onMouseEnter={() => setHoveredSkill(skill.name)}
-                              onMouseLeave={() => setHoveredSkill(null)}
-                              style={{ animationDelay: `${(categoryIndex * 200) + (skillIndex * 100)}ms` }}
-                            >
-                              <div className="relative">
-                                <div className="h-12 w-12 text-muted-foreground group-hover/skill:text-primary transition-colors duration-300 flex items-center justify-center">
-                                  <skill.icon />
-                                </div>
-                                {hoveredSkill === skill.name && (
-                                  <div className="absolute -inset-2 bg-primary/20 rounded-full blur animate-pulse" />
-                                )}
-                              </div>
-                              <span className="text-sm font-semibold text-center leading-tight group-hover/skill:text-primary transition-colors duration-300">
-                                {skill.name}
-                              </span>
-                            </div>
-                          </TooltipTrigger>
-                          <TooltipContent side="top" className="max-w-xs">
-                            <p className="text-sm">{skill.description}</p>
-                          </TooltipContent>
-                        </Tooltip>
-                      ))}
+                  <h3 className="text-xl font-bold text-white">{category.name}</h3>
+                </div>
+                
+                <div className="h-px w-full bg-gradient-to-r from-primary/30 to-transparent mb-5" />
+                
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div 
+                      key={skill.name}
+                      className="group relative flex flex-col items-center gap-2 p-3 rounded-lg border border-white/5 hover:border-primary/30 bg-black/30 hover:bg-black/50 transition-all duration-200"
+                      title={skill.description}
+                    >
+                      <div className="h-8 w-8 text-white/70 group-hover:text-primary transition-colors duration-200 flex items-center justify-center">
+                        <skill.icon />
+                      </div>
+                      <span className="text-xs font-medium text-center text-white/80 group-hover:text-white transition-colors duration-200">
+                        {skill.name}
+                      </span>
                     </div>
-                  </TooltipProvider>
-                </CardContent>
-              </Card>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
 
           {/* Skills Summary */}
-          <div className="mt-16 text-center">
-            <Card className="bg-gradient-to-r from-primary/5 to-blue-500/5 border-primary/20 max-w-4xl mx-auto">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4 text-primary">
-                  Always Learning, Always Growing
-                </h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  Technology evolves rapidly, and so do I. With a passion for continuous learning and 
-                  hands-on experience across diverse projects, I stay at the forefront of innovation 
-                  to deliver cutting-edge solutions.
-                </p>
-                <div className="mt-6 flex flex-wrap justify-center gap-2">
-                  <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">AWS Certified Solutions Architect</span>
-                  <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">AWS Certified Developer</span>
-                  <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Azure DevOps Expert</span>
-                  <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Azure Administrator</span>
-                  <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Kubernetes CKAD</span>
-                  <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">+7 More Certifications</span>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="mt-16">
+            <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl p-8 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold mb-4 text-white text-center">
+                Always Learning, Always Growing
+              </h3>
+              <p className="text-white/80 text-lg leading-relaxed text-center">
+                Technology evolves rapidly, and so do I. With a passion for continuous learning and 
+                hands-on experience across diverse projects, I stay at the forefront of innovation 
+                to deliver cutting-edge solutions.
+              </p>
+              <div className="mt-6 flex flex-wrap justify-center gap-2">
+                <span className="text-xs bg-primary/10 text-white px-3 py-1 rounded-full font-medium">AWS Certified Solutions Architect</span>
+                <span className="text-xs bg-primary/10 text-white px-3 py-1 rounded-full font-medium">AWS Certified Developer</span>
+                <span className="text-xs bg-primary/10 text-white px-3 py-1 rounded-full font-medium">Azure DevOps Expert</span>
+                <span className="text-xs bg-primary/10 text-white px-3 py-1 rounded-full font-medium">Azure Administrator</span>
+                <span className="text-xs bg-primary/10 text-white px-3 py-1 rounded-full font-medium">Kubernetes CKAD</span>
+                <span className="text-xs bg-primary/10 text-white px-3 py-1 rounded-full font-medium">+7 More Certifications</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

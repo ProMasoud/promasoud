@@ -51,7 +51,7 @@ export default function About() {
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
               About Me
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-blue-600 mx-auto rounded-full" />
@@ -63,16 +63,16 @@ export default function About() {
               {/* About Text */}
               <div className="relative">
                 <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-primary to-blue-600 rounded-full" />
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed pl-8">
+                <p className="text-lg md:text-xl text-white/90 leading-relaxed pl-8">
                   {aboutText}
                 </p>
               </div>
 
               {/* Core Expertise */}
               <div>
-                <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                <h3 className="text-2xl font-bold mb-6 flex items-center gap-2 text-white">
                   <div className="flex items-center justify-center h-6 w-6">
-                  <TechIcon name="sparkles" className="h-6 w-6 text-primary" />
+                  <TechIcon name="sparkles" className="h-6 w-6 text-white" />
                 </div>
                   Core Expertise
                 </h3>
@@ -86,7 +86,7 @@ export default function About() {
                       <div className="h-5 w-5 text-primary flex-shrink-0 flex items-center justify-center">
                         <TechIcon name={area.icon} className="h-5 w-5" />
                       </div>
-                      <span className="font-medium text-sm">{area.name}</span>
+                      <span className="font-medium text-sm text-white/90">{area.name}</span>
                     </div>
                   ))}
                 </div>
@@ -98,27 +98,27 @@ export default function About() {
                   <div className="flex flex-wrap justify-center gap-8 text-center">
                     <div>
                       <div className="text-3xl font-bold text-primary mb-1">9+</div>
-                      <div className="text-sm text-muted-foreground">Years Experience</div>
+                      <div className="text-sm text-white/80">Years Experience</div>
                     </div>
                     <div className="w-px bg-border" />
                     <div>
                       <div className="text-3xl font-bold text-primary mb-1">4+</div>
-                      <div className="text-sm text-muted-foreground">Countries</div>
+                      <div className="text-sm text-white/80">Countries</div>
                     </div>
                     <div className="w-px bg-border" />
                     <div>
                       <div className="text-3xl font-bold text-primary mb-1">3+</div>
-                      <div className="text-sm text-muted-foreground">Industries</div>
+                      <div className="text-sm text-white/80">Industries</div>
                     </div>
                     <div className="w-px bg-border" />
                     <div>
                       <div className="text-3xl font-bold text-primary mb-1">12+</div>
-                      <div className="text-sm text-muted-foreground">Certifications</div>
+                      <div className="text-sm text-white/80">Certifications</div>
                     </div>
                     <div className="w-px bg-border" />
                     <div>
                       <div className="text-3xl font-bold text-primary mb-1">2</div>
-                      <div className="text-sm text-muted-foreground">Patents</div>
+                      <div className="text-sm text-white/80">Patents</div>
                     </div>
                   </div>
                 </CardContent>
@@ -150,7 +150,7 @@ export default function About() {
                           <div className="text-2xl font-bold text-primary mb-1">
                             {achievement.number}
                           </div>
-                          <div className="text-sm text-muted-foreground">
+                          <div className="text-sm text-white/80">
                             {achievement.label}
                           </div>
                         </div>
