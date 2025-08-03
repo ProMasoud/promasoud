@@ -1,8 +1,9 @@
 "use client"
 
 import * as React from "react"
-import StackIcon from "tech-stack-icons"
-import { DayPicker } from "react-day-picker"
+
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { DayPicker, type CustomComponents } from "react-day-picker"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
@@ -54,13 +55,10 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: ({ className, ...props }) => (
-          <StackIcon name="chevron-left" className={cn("h-4 w-4", className)} {...props} />
-        ),
-        IconRight: ({ className, ...props }) => (
-          <StackIcon name="chevron-right" className={cn("h-4 w-4", className)} {...props} />
-        ),
-      }}
+        // Using properly typed components for DayPicker
+        IconLeft: ({ ...props }) => <ChevronLeft className={cn("h-4 w-4")} />,
+        IconRight: ({ ...props }) => <ChevronRight className={cn("h-4 w-4")} />
+      } as unknown as CustomComponents}
       {...props}
     />
   )

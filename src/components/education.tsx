@@ -1,4 +1,4 @@
-import StackIcon from 'tech-stack-icons';
+import { GraduationCap, MapPin, BookOpen, Award, Calendar } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 
@@ -55,11 +55,11 @@ export default function Education() {
               <CardContent className="pt-4 space-y-4">
                 <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6">
                   <div className="flex items-center gap-2 text-muted-foreground">
-                    <StackIcon name="book" className="w-4 h-4 text-primary" />
+                    <BookOpen className="w-4 h-4 text-primary" />
                     <span className="font-medium">{edu.institution}</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
-                    <StackIcon name="map-pin" className="w-4 h-4 text-primary" />
+                    <MapPin className="w-4 h-4 text-primary" />
                     <span>{edu.location}</span>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ export default function Education() {
                 {edu.achievements.length > 0 && (
                   <div className="space-y-2">
                     <h4 className="font-semibold flex items-center gap-2">
-                      <StackIcon name="award" className="w-4 h-4 text-primary" /> Achievements
+                      <Award className="w-4 h-4 text-primary" /> Achievements
                     </h4>
                     <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground pl-2">
                       {edu.achievements.map((achievement, i) => (
@@ -82,7 +82,7 @@ export default function Education() {
                 {edu.courses.length > 0 && (
                   <div>
                     <h4 className="font-semibold mb-2 flex items-center gap-2">
-                      <StackIcon name="calendar" className="w-4 h-4 text-primary" /> Key Courses
+                      <Calendar className="w-4 h-4 text-primary" /> Key Courses
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {edu.courses.map((course, i) => (

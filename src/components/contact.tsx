@@ -1,4 +1,5 @@
-import StackIcon from 'tech-stack-icons';
+
+import { Linkedin, Mail, Globe, Phone, MapPin } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -8,31 +9,31 @@ import Link from 'next/link';
 const socialLinks = [
   {
     name: 'LinkedIn',
-    icon: () => <StackIcon name="linkedin" className="h-5 w-5" />,
+    icon: () => <Linkedin className="h-5 w-5" />,
     url: 'https://www.linkedin.com/in/promasoud',
     label: 'www.linkedin.com/in/promasoud'
   },
   { 
     name: 'Email', 
-    icon: () => <StackIcon name="mail" className="h-5 w-5" />,
+    icon: () => <Mail className="h-5 w-5" />,
     url: 'mailto:mtg1376@gmail.com',
     label: 'mtg1376@gmail.com'
   },
   { 
     name: 'Blog', 
-    icon: () => <StackIcon name="globe" className="h-5 w-5" />,
+    icon: () => <Globe className="h-5 w-5" />,
     url: 'https://medium.com/@promasoud',
     label: 'medium.com/@promasoud'
   },
   { 
     name: 'Phone', 
-    icon: () => <StackIcon name="phone" className="h-5 w-5" />,
+    icon: () => <Phone className="h-5 w-5" />,
     url: 'tel:+903273294841',
     label: '+903273294841'
   },
   { 
     name: 'Location', 
-    icon: () => <StackIcon name="map-pin" className="h-5 w-5" />,
+    icon: () => <MapPin className="h-5 w-5" />,
     url: '#',
     label: 'Dubai, United Arab Emirates'
   }

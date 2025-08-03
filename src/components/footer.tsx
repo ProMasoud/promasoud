@@ -1,4 +1,4 @@
-import StackIcon from 'tech-stack-icons';
+import TechIcon from './tech-icons';
 import Link from 'next/link';
 
 const socialLinks = [
@@ -28,7 +28,7 @@ export default function Footer() {
                 aria-label={name}
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                <StackIcon name={icon} className="h-5 w-5" />
+                <TechIcon name={icon} className="h-5 w-5" />
               </Link>
             ))}
           </div>

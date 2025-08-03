@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
-import StackIcon from 'tech-stack-icons';
+import TechIcon from './tech-icons';
 import { useEffect, useState } from 'react';
 
 const projectsData = [
@@ -17,11 +17,11 @@ const projectsData = [
     longDescription: 'As Technical Director at LyonsGlobal, I lead cross-functional teams and drive strategic IT initiatives for a healthcare company. I manage a team of 10+ developers and DevOps engineers, focusing on building scalable healthcare solutions that comply with industry regulations like HIPAA. Our team has successfully delivered multiple critical projects that have improved patient care and operational efficiency.',
     image: 'https://placehold.co/800x600.png',
     imageHint: 'healthcare IT platform',
-    icon: () => <StackIcon name="hospital" className="w-5 h-5" />,
+    icon: () => <TechIcon name="hospital" className="w-5 h-5" />,
     metrics: [
-      { label: 'Team Size', value: '10+', icon: () => <StackIcon name="users" className="w-5 h-5" /> },
-      { label: 'Projects', value: '5+', icon: () => <StackIcon name="star" className="w-5 h-5" /> },
-      { label: 'Uptime', value: '99.9%', icon: () => <StackIcon name="globe" className="w-5 h-5" /> }
+      { label: 'Team Size', value: '10+', icon: () => <TechIcon name="users" className="w-5 h-5" /> },
+      { label: 'Projects', value: '5+', icon: () => <TechIcon name="star" className="w-5 h-5" /> },
+      { label: 'Uptime', value: '99.9%', icon: () => <TechIcon name="globe" className="w-5 h-5" /> }
     ],
     tags: ['Healthcare', 'HIPAA', 'Technical Leadership', 'Team Management', 'Cloud Infrastructure'],
     liveUrl: 'https://www.lyonsglobal.com',
@@ -36,10 +36,10 @@ const projectsData = [
     longDescription: 'As Technical Lead at GO2TR Immigration Consulting Company, I led the migration of the main website from a Laravel+Vue CMS to WordPress. I also developed an internal CRM (BMS) system that connects all organizational stakeholders using Laravel and Nuxt. This project significantly improved the company\'s digital presence and internal operations.',
     image: 'https://placehold.co/600x400.png',
     imageHint: 'immigration consulting platform',
-    icon: () => <StackIcon name="globe" className="w-5 h-5" />,
+    icon: () => <TechIcon name="globe" className="w-5 h-5" />,
     metrics: [
-      { label: 'Website Traffic', value: '200%+', icon: () => <StackIcon name="zap" className="w-5 h-5" /> },
-      { label: 'User Satisfaction', value: '95%', icon: () => <StackIcon name="star" className="w-5 h-5" /> }
+      { label: 'Website Traffic', value: '200%+', icon: () => <TechIcon name="zap" className="w-5 h-5" /> },
+      { label: 'User Satisfaction', value: '95%', icon: () => <TechIcon name="star" className="w-5 h-5" /> }
     ],
     tags: ['CRM', 'Laravel', 'Nuxt', 'WordPress', 'Website Migration'],
     liveUrl: 'https://go2tr.com',
@@ -54,9 +54,9 @@ const projectsData = [
     longDescription: 'I invented the Auto Homemade Pharmacy, an innovative smart home pharmacy system with mobile medication planning capabilities. This system helps users manage their medications more effectively through automated dispensing and mobile app integration for scheduling and reminders.',
     image: 'https://placehold.co/600x400.png',
     imageHint: 'smart home pharmacy system',
-    icon: () => <StackIcon name="shield" className="w-5 h-5" />,
+    icon: () => <TechIcon name="shield" className="w-5 h-5" />,
     metrics: [
-      { label: 'Patent Status', value: 'Pending', icon: () => <StackIcon name="star" className="w-5 h-5" /> }
+      { label: 'Patent Status', value: 'Pending', icon: () => <TechIcon name="star" className="w-5 h-5" /> }
     ],
     tags: ['Invention', 'IoT', 'Healthcare', 'Mobile App'],
     liveUrl: '#',
@@ -118,7 +118,7 @@ export default function Projects() {
                     />
                     <div className="absolute top-4 left-4 z-20">
                       <Badge className="bg-gradient-to-r from-primary to-blue-600 text-white border-0 shadow-lg">
-                        <StackIcon name="star" className="w-3 h-3 mr-1" />
+                        <TechIcon name="star" className="w-3 h-3 mr-1" />
                         Flagship Project
                       </Badge>
                     </div>
@@ -148,7 +148,7 @@ export default function Projects() {
                         {featuredProject.metrics.map((metric, index) => (
                           <div key={index} className="text-center p-3 bg-muted/50 rounded-lg">
                             <div className="flex items-center justify-center mb-2">
-                              <div className="w-4 h-4 text-primary">
+                              <div className="w-4 h-4 text-primary flex items-center justify-center">
                                 <metric.icon />
                               </div>
                             </div>
@@ -175,7 +175,7 @@ export default function Projects() {
                       {featuredProject.liveUrl && (
                         <Button asChild size="lg" className="bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 shadow-lg">
                           <Link href={featuredProject.liveUrl} target="_blank">
-                            <StackIcon name="external-link" className="mr-2 h-4 w-4" />
+                            <TechIcon name="external-link" className="mr-2 h-4 w-4" />
                             Visit LEO360.AI
                           </Link>
                         </Button>
@@ -183,7 +183,7 @@ export default function Projects() {
                       {featuredProject.githubUrl && (
                         <Button asChild variant="outline" size="lg">
                           <Link href={featuredProject.githubUrl} target="_blank">
-                            <StackIcon name="github" className="mr-2 h-4 w-4" />
+                            <TechIcon name="github" className="mr-2 h-4 w-4" />
                             View Code
                           </Link>
                         </Button>
@@ -259,7 +259,7 @@ export default function Projects() {
                       {project.githubUrl && (
                         <Button variant="secondary" size="sm" asChild className="flex-1">
                           <Link href={project.githubUrl} target="_blank">
-                            <StackIcon name="github" className="mr-2 h-3 w-3" />
+                            <TechIcon name="github" className="mr-2 h-3 w-3" />
                             GitHub
                           </Link>
                         </Button>
@@ -267,7 +267,7 @@ export default function Projects() {
                       {project.liveUrl && (
                         <Button size="sm" asChild className="flex-1">
                           <Link href={project.liveUrl} target="_blank">
-                            <StackIcon name="external-link" className="mr-2 h-3 w-3" />
+                            <TechIcon name="external-link" className="mr-2 h-3 w-3" />
                             Live Demo
                           </Link>
                         </Button>

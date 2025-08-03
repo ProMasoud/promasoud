@@ -1,5 +1,6 @@
 'use client';
-import StackIcon from 'tech-stack-icons';
+
+import { Mic, Users, BookOpen, Calendar, MapPin, Award, ExternalLink } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
@@ -76,13 +77,13 @@ export default function Activities() {
   const getIcon = (type: string) => {
     switch (type) {
       case 'speaking':
-        return () => <StackIcon name="mic" className="w-5 h-5" />;
+        return () => <Mic className="w-5 h-5" />;
       case 'community':
-        return () => <StackIcon name="users" className="w-5 h-5" />;
+        return () => <Users className="w-5 h-5" />;
       case 'professional':
-        return () => <StackIcon name="book" className="w-5 h-5" />;
+        return () => <BookOpen className="w-5 h-5" />;
       default:
-        return () => <StackIcon name="calendar" className="w-5 h-5" />;
+        return () => <Calendar className="w-5 h-5" />;
     }
   };
 
@@ -170,12 +171,12 @@ export default function Activities() {
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         {activity.type === 'speaking' ? (
                           <>
-                            <StackIcon name="users" className="h-4 w-4" />
+                            <Users className="h-4 w-4" />
                             <span>{activity.event}</span>
                           </>
                         ) : (
                           <>
-                            <StackIcon name="users" className="h-4 w-4" />
+                            <Users className="h-4 w-4" />
                             <span>{activity.organization}</span>
                           </>
                         )}
@@ -183,19 +184,19 @@ export default function Activities() {
                       
                       {activity.location && (
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <StackIcon name="map-pin" className="h-4 w-4" />
+                          <MapPin className="h-4 w-4" />
                           <span>{activity.location}</span>
                         </div>
                       )}
                       
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <StackIcon name="calendar" className="h-4 w-4" />
+                        <Calendar className="h-4 w-4" />
                         <span>{activity.date}</span>
                       </div>
                       
                       {activity.credential && (
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <StackIcon name="award" className="h-4 w-4" />
+                          <Award className="h-4 w-4" />
                           <span>{activity.credential}</span>
                         </div>
                       )}
@@ -210,7 +211,7 @@ export default function Activities() {
                         <Button variant="ghost" size="sm" className="gap-1 text-primary" asChild>
                           <Link href={activity.url} target="_blank">
                             <span className="text-xs">Learn More</span>
-                            <StackIcon name="external-link" className="h-3 w-3" />
+                            <ExternalLink className="h-3 w-3" />
                           </Link>
                         </Button>
                       </div>

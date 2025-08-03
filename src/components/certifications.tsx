@@ -1,5 +1,6 @@
 'use client';
-import StackIcon from 'tech-stack-icons';
+
+import { Award, Calendar, FileCheck, ExternalLink, Shield } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
@@ -92,7 +93,7 @@ export default function Certifications() {
           {/* Certifications */}
           <div className="mb-20">
             <h3 className="text-2xl font-bold mb-8 flex items-center gap-2">
-              <StackIcon name="award" className="h-6 w-6 text-primary" />
+              <Award className="h-6 w-6 text-primary" />
               Professional Certifications
             </h3>
             
@@ -106,7 +107,7 @@ export default function Certifications() {
                   <CardHeader className="pb-2">
                     <div className="flex items-start gap-3 mb-2">
                       <div className="p-2 bg-primary/10 rounded-lg mt-1">
-                        <StackIcon name="shield" className="h-5 w-5 text-primary" />
+                        <Shield className="h-5 w-5 text-primary" />
                       </div>
                       <div>
                         <CardTitle className="text-lg font-bold leading-tight">{cert.name}</CardTitle>
@@ -119,11 +120,11 @@ export default function Certifications() {
                   <CardContent className="pt-4 space-y-4">
                     <div className="flex flex-wrap gap-4 text-sm">
                       <div className="flex items-center gap-1 text-muted-foreground">
-                        <StackIcon name="calendar" className="h-4 w-4" />
+                        <Calendar className="h-4 w-4" />
                         <span>Issued: {cert.date}</span>
                       </div>
                       <div className="flex items-center gap-1 text-muted-foreground">
-                        <StackIcon name="file-check" className="h-4 w-4" />
+                        <FileCheck className="h-4 w-4" />
                         <span>Valid until: {cert.validUntil}</span>
                       </div>
                     </div>
@@ -135,7 +136,7 @@ export default function Certifications() {
                       <Button variant="ghost" size="sm" className="gap-1" asChild>
                         <Link href={cert.url} target="_blank">
                           <span className="text-xs">Verify</span>
-                          <StackIcon name="external-link" className="h-3 w-3" />
+                          <ExternalLink className="h-3 w-3" />
                         </Link>
                       </Button>
                     </div>
@@ -148,7 +149,7 @@ export default function Certifications() {
           {/* Patents */}
           <div>
             <h3 className="text-2xl font-bold mb-8 flex items-center gap-2">
-              <StackIcon name="file-check" className="h-6 w-6 text-primary" />
+              <FileCheck className="h-6 w-6 text-primary" />
               Patents
             </h3>
             
@@ -166,11 +167,11 @@ export default function Certifications() {
                   <CardContent className="space-y-4">
                     <div className="flex flex-wrap gap-4 text-sm">
                       <div className="flex items-center gap-1 text-muted-foreground">
-                        <StackIcon name="file-check" className="h-4 w-4" />
+                        <FileCheck className="h-4 w-4" />
                         <span>Patent No: {patent.number}</span>
                       </div>
                       <div className="flex items-center gap-1 text-muted-foreground">
-                        <StackIcon name="calendar" className="h-4 w-4" />
+                        <Calendar className="h-4 w-4" />
                         <span>Issued: {patent.issueDate}</span>
                       </div>
                     </div>

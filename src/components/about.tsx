@@ -1,8 +1,8 @@
 'use client';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import StackIcon from 'tech-stack-icons';
 import { useEffect, useState } from 'react';
+import TechIcon from './tech-icons';
 
 const aboutText = `With over 8 years of experience in software engineering and DevOps, I've had the opportunity to work across multiple industries, including cryptocurrency, education, and healthcare. This diverse background has given me a deep understanding of business logic and the ability to deliver high-quality solutions that drive success. Throughout my career, I've thrived in both leadership and collaborative roles, having worked with over five international teams. This experience has equipped me with the skills to navigate and resolve the unique challenges that come with global collaboration. I'm passionate about leveraging technology to solve business problems creatively. Whether it's exploring new frameworks or diving into different technologies, I view innovation as a daily hobby, not just a job. If you're looking for a reliable, creative, and experienced software engineer who understands the bigger picture, I'd love to connect!`;
 
@@ -71,7 +71,9 @@ export default function About() {
               {/* Core Expertise */}
               <div>
                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                  <StackIcon name="sparkles" className="h-6 w-6 text-primary" />
+                  <div className="flex items-center justify-center h-6 w-6">
+                  <TechIcon name="sparkles" className="h-6 w-6 text-primary" />
+                </div>
                   Core Expertise
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -81,8 +83,8 @@ export default function About() {
                       className={`flex items-center gap-3 p-4 bg-card/50 backdrop-blur-sm rounded-xl border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 ${isVisible ? 'animate-in slide-in-from-left' : ''}`}
                       style={{ animationDelay: `${index * 100}ms` }}
                     >
-                      <div className="h-5 w-5 text-primary flex-shrink-0">
-                        <StackIcon name={area.icon} className="h-5 w-5" />
+                      <div className="h-5 w-5 text-primary flex-shrink-0 flex items-center justify-center">
+                        <TechIcon name={area.icon} className="h-5 w-5" />
                       </div>
                       <span className="font-medium text-sm">{area.name}</span>
                     </div>
@@ -126,10 +128,12 @@ export default function About() {
             {/* Right Column - Achievements */}
             <div className="space-y-6">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <StackIcon name="award" className="h-6 w-6 text-primary" />
+                <div className="flex items-center justify-center h-6 w-6">
+                  <TechIcon name="award" className="h-6 w-6 text-primary" />
+                </div>
                 Key Achievements
               </h3>
-              
+
               <div className="grid gap-4">
                 {achievements.map((achievement, index) => (
                   <Card
@@ -139,8 +143,8 @@ export default function About() {
                   >
                     <CardContent className="p-6">
                       <div className="flex items-center gap-4">
-                        <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                          <StackIcon name={achievement.icon} className="h-6 w-6 text-primary" />
+                        <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors flex items-center justify-center">
+                          <TechIcon name={achievement.icon} className="h-6 w-6 text-primary" />
                         </div>
                         <div>
                           <div className="text-2xl font-bold text-primary mb-1">
