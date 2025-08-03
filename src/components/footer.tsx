@@ -1,14 +1,14 @@
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import StackIcon from 'tech-stack-icons';
 import Link from 'next/link';
 
 const socialLinks = [
   {
     name: 'LinkedIn',
-    icon: Linkedin,
+    icon: 'linkedin',
     url: 'https://www.linkedin.com/in/masoud-tavakkoli/',
   },
-  { name: 'GitHub', icon: Github, url: 'https://github.com/Masoud-T' },
-  { name: 'Email', icon: Mail, url: 'mailto:masoud.tavakkoli.dev@gmail.com' },
+  { name: 'GitHub', icon: 'github', url: 'https://github.com/Masoud-T' },
+  { name: 'Email', icon: 'mail', url: 'mailto:masoud.tavakkoli.dev@gmail.com' },
 ];
 
 export default function Footer() {
@@ -20,7 +20,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Masoud Tavakkoli. All rights reserved.
           </p>
           <div className="flex space-x-4">
-            {socialLinks.map(({ name, icon: Icon, url }) => (
+            {socialLinks.map(({ name, icon, url }) => (
               <Link
                 key={name}
                 href={url}
@@ -28,7 +28,7 @@ export default function Footer() {
                 aria-label={name}
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                <Icon className="h-5 w-5" />
+                <StackIcon name={icon} className="h-5 w-5" />
               </Link>
             ))}
           </div>

@@ -1,89 +1,88 @@
 'use client';
-import { BrainCircuit, Briefcase, Code, Database, GitMerge, Globe, HardDrive, Lightbulb, MessageCircle, Server, Shell, Users } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
-import { AnsibleIcon, AwsIcon, AzureIcon, DockerIcon, GoIcon, JavascriptIcon, KubernetesIcon, MongodbIcon, MySqlIcon, PhpIcon, PostgresqlIcon, PythonIcon, RedisIcon, TerraformIcon } from './icons';
+import StackIcon from 'tech-stack-icons';
 import { useEffect, useState } from 'react';
 
 const skillCategories = [
   {
     name: 'Programming',
-    icon: Code,
+    icon: () => <StackIcon name="typescript" className="w-5 h-5" />,
     skills: [
-      { name: 'Python', icon: PythonIcon, description: 'Expert in Python for AI/ML, web backends, data analysis, and automation scripts.' },
-      { name: 'Go', icon: GoIcon, description: 'Proficient in Go for building high-performance, concurrent systems and microservices.' },
-      { name: 'Bash', icon: Shell, description: 'Advanced shell scripting for automation, system administration, and DevOps workflows.' },
-      { name: 'JavaScript', icon: JavascriptIcon, description: 'Frontend and backend development with Node.js, React, and Next.js.' },
-      { name: 'PHP', icon: PhpIcon, description: 'Experience with legacy and modern PHP applications and frameworks.' },
-      { name: 'SQL', icon: Database, description: 'Advanced database querying, optimization, and schema design.' },
+      { name: 'Python', icon: () => <StackIcon name="python" className="w-5 h-5" />, description: 'Expert in Python for AI/ML, web backends, data analysis, and automation scripts.' },
+      { name: 'Go', icon: () => <StackIcon name="golang" className="w-5 h-5" />, description: 'Proficient in Go for building high-performance, concurrent systems and microservices.' },
+      { name: 'Bash', icon: () => <StackIcon name="bash" className="w-5 h-5" />, description: 'Advanced shell scripting for automation, system administration, and DevOps workflows.' },
+      { name: 'JavaScript', icon: () => <StackIcon name="javascript" className="w-5 h-5" />, description: 'Frontend and backend development with Node.js, React, and Next.js.' },
+      { name: 'PHP', icon: () => <StackIcon name="php" className="w-5 h-5" />, description: 'Experience with legacy and modern PHP applications and frameworks.' },
+      { name: 'SQL', icon: () => <StackIcon name="mysql" className="w-5 h-5" />, description: 'Advanced database querying, optimization, and schema design.' },
     ],
   },
   {
     name: 'Cloud Platforms',
-    icon: Server,
+    icon: () => <StackIcon name="aws" className="w-5 h-5" />,
     skills: [
-      { name: 'AWS', icon: AwsIcon, description: 'Amazon Web Services: EC2, S3, RDS, EKS, Lambda, CloudFormation, Route53, CloudFront, IAM, VPC, and more.' },
-      { name: 'Azure', icon: AzureIcon, description: 'Microsoft Azure: AKS, App Service, Functions, Storage, SQL, DevOps, Active Directory, and more.' },
-      { name: 'GCP', icon: Globe, description: 'Google Cloud Platform: GKE, Compute Engine, Cloud Storage, BigQuery, and more.' },
-      { name: 'Digital Ocean', icon: Globe, description: 'Experience with Digital Ocean droplets, Kubernetes, and managed databases.' },
-      { name: 'OVH', icon: Server, description: 'OVH cloud infrastructure management and optimization.' },
+      { name: 'AWS', icon: () => <StackIcon name="aws" className="w-5 h-5" />, description: 'Amazon Web Services: EC2, S3, RDS, EKS, Lambda, CloudFormation, Route53, CloudFront, IAM, VPC, and more.' },
+      { name: 'Azure', icon: () => <StackIcon name="azure" className="w-5 h-5" />, description: 'Microsoft Azure: AKS, App Service, Functions, Storage, SQL, DevOps, Active Directory, and more.' },
+      { name: 'GCP', icon: () => <StackIcon name="gcloud" className="w-5 h-5" />, description: 'Google Cloud Platform: GKE, Compute Engine, Cloud Storage, BigQuery, and more.' },
+      { name: 'Digital Ocean', icon: () => <StackIcon name="digitalocean" className="w-5 h-5" />, description: 'Experience with Digital Ocean droplets, Kubernetes, and managed databases.' },
+      { name: 'OVH', icon: () => <StackIcon name="ovh" className="w-5 h-5" />, description: 'OVH cloud infrastructure management and optimization.' },
     ],
   },
   {
-    name: 'DevOps & Tools',
-    icon: GitMerge,
+    name: 'DevOps & Infrastructure',
+    icon: () => <StackIcon name="docker" className="w-5 h-5" />,
     skills: [
-      { name: 'Docker', icon: DockerIcon, description: 'Containerization, multi-stage builds, and microservices architecture.' },
-      { name: 'Kubernetes', icon: KubernetesIcon, description: 'Orchestration of containerized applications at scale, custom operators, and helm charts.' },
-      { name: 'Terraform', icon: TerraformIcon, description: 'Infrastructure as Code for multi-cloud provisioning and management.' },
-      { name: 'Ansible', icon: AnsibleIcon, description: 'Configuration management, application deployment, and infrastructure automation.' },
-      { name: 'CI/CD', icon: GitMerge, description: 'Building automated pipelines with Jenkins, GitLab CI, GitHub Actions, Azure DevOps.' },
-      { name: 'Monitoring', icon: HardDrive, description: 'Prometheus, Grafana, ELK Stack, Azure Monitor, CloudWatch.' },
+      { name: 'Docker', icon: () => <StackIcon name="docker" className="w-5 h-5" />, description: 'Containerization, multi-stage builds, Docker Compose, and registry management.' },
+      { name: 'Kubernetes', icon: () => <StackIcon name="kubernetes" className="w-5 h-5" />, description: 'K8s cluster management, deployments, services, ingress, Helm charts, and operators.' },
+      { name: 'Terraform', icon: () => <StackIcon name="terraform" className="w-5 h-5" />, description: 'Infrastructure as Code for AWS, Azure, and GCP with modules and state management.' },
+      { name: 'Ansible', icon: () => <StackIcon name="ansible" className="w-5 h-5" />, description: 'Configuration management and automated provisioning with playbooks and roles.' },
+      { name: 'CI/CD', icon: () => <StackIcon name="github-actions" className="w-5 h-5" />, description: 'GitHub Actions, GitLab CI, Jenkins, and Azure DevOps pipelines.' },
+      { name: 'Linux', icon: () => <StackIcon name="linux" className="w-5 h-5" />, description: 'System administration, performance tuning, and security hardening.' },
     ],
   },
   {
     name: 'AI/ML',
-    icon: BrainCircuit,
+    icon: () => <StackIcon name="openai" className="w-5 h-5" />,
     skills: [
-        { name: 'LLM Integration', icon: Globe, description: 'Integrating and fine-tuning Large Language Models (OpenAI, Anthropic, Llama, etc).' },
-        { name: 'ML Ops', icon: GitMerge, description: 'End-to-end ML pipelines, model deployment, and monitoring.' },
-        { name: 'GPU Management', icon: HardDrive, description: 'Managing GPU resources for AI/ML workloads on cloud and on-premise.' },
-        { name: 'Vector DBs', icon: Database, description: 'Working with vector databases for AI applications (Pinecone, Weaviate, etc).' },
-        { name: 'RAG Systems', icon: BrainCircuit, description: 'Building Retrieval Augmented Generation systems for enterprise applications.' },
+        { name: 'LLM Integration', icon: () => <StackIcon name="openai" className="w-5 h-5" />, description: 'Integrating and fine-tuning Large Language Models (OpenAI, Anthropic, Llama, etc).' },
+        { name: 'ML Ops', icon: () => <StackIcon name="mlflow" className="w-5 h-5" />, description: 'End-to-end ML pipelines, model deployment, and monitoring.' },
+        { name: 'GPU Management', icon: () => <StackIcon name="nvidia" className="w-5 h-5" />, description: 'Managing GPU resources for AI/ML workloads on cloud and on-premise.' },
+        { name: 'Vector DBs', icon: () => <StackIcon name="pinecone" className="w-5 h-5" />, description: 'Working with vector databases for AI applications (Pinecone, Weaviate, etc).' },
+        { name: 'RAG Systems', icon: () => <StackIcon name="langchain" className="w-5 h-5" />, description: 'Building Retrieval Augmented Generation systems for enterprise applications.' },
     ],
   },
   {
     name: 'Databases',
-    icon: Database,
+    icon: () => <StackIcon name="mysql" className="w-5 h-5" />,
     skills: [
-      { name: 'MySQL', icon: MySqlIcon, description: 'Relational database design, optimization, and high-availability setups.' },
-      { name: 'PostgreSQL', icon: PostgresqlIcon, description: 'Advanced relational database management and performance tuning.' },
-      { name: 'MongoDB', icon: MongodbIcon, description: 'NoSQL database for flexible data schemas and distributed systems.' },
-      { name: 'Redis', icon: RedisIcon, description: 'In-memory data store for caching, messaging, and real-time applications.' },
-      { name: 'Elasticsearch', icon: Database, description: 'Full-text search and analytics engine for log management.' },
-      { name: 'DynamoDB', icon: AwsIcon, description: 'AWS NoSQL database for high-performance applications.' },
+      { name: 'MySQL', icon: () => <StackIcon name="mysql" className="w-5 h-5" />, description: 'Relational database design, optimization, and high-availability setups.' },
+      { name: 'PostgreSQL', icon: () => <StackIcon name="postgresql" className="w-5 h-5" />, description: 'Advanced relational database management and performance tuning.' },
+      { name: 'MongoDB', icon: () => <StackIcon name="mongodb" className="w-5 h-5" />, description: 'NoSQL database for flexible data schemas and distributed systems.' },
+      { name: 'Redis', icon: () => <StackIcon name="redis" className="w-5 h-5" />, description: 'In-memory data store for caching, messaging, and real-time applications.' },
+      { name: 'Elasticsearch', icon: () => <StackIcon name="elasticsearch" className="w-5 h-5" />, description: 'Full-text search and analytics engine for log management.' },
+      { name: 'DynamoDB', icon: () => <StackIcon name="aws-dynamodb" className="w-5 h-5" />, description: 'AWS NoSQL database for high-performance applications.' },
     ],
   },
   {
       name: 'Soft Skills',
-      icon: Briefcase,
+      icon: () => <StackIcon name="linkedin" className="w-5 h-5" />,
       skills: [
-        { name: 'Leadership', icon: Users, description: 'Leading and mentoring technical teams across multiple countries and cultures.' },
-        { name: 'Communication', icon: MessageCircle, description: 'Clear communication with technical and non-technical stakeholders at all levels.' },
-        { name: 'Problem-Solving', icon: Lightbulb, description: 'Analytical and creative problem-solving abilities for complex technical challenges.' },
-        { name: 'Project Management', icon: Briefcase, description: 'Managing complex technical projects from inception to delivery.' },
-        { name: 'Stakeholder Management', icon: Users, description: 'Building relationships with clients, partners, and internal teams.' },
-        { name: 'Adaptability', icon: Globe, description: 'Quickly adapting to new technologies, environments, and business requirements.' },
+        { name: 'Technical Leadership', icon: () => <StackIcon name="linkedin" className="w-5 h-5" />, description: 'Leading and mentoring technical teams across multiple countries and cultures.' },
+        { name: 'DevOps', icon: () => <StackIcon name="docker" className="w-5 h-5" />, description: 'Experience with DevOps practices, CI/CD pipelines, and infrastructure automation.' },
+        { name: 'Project Management', icon: () => <StackIcon name="jira" className="w-5 h-5" />, description: 'Experience managing projects from conception to delivery with agile methodologies.' },
+        { name: 'English', icon: () => <StackIcon name="usa" className="w-5 h-5" />, description: 'Professional working proficiency' },
+        { name: 'Persian', icon: () => <StackIcon name="iran" className="w-5 h-5" />, description: 'Native/Bilingual proficiency' },
+        { name: 'Azerbaijani', icon: () => <StackIcon name="azerbaijan" className="w-5 h-5" />, description: 'Native/Bilingual proficiency' }
       ]
   },
   {
       name: 'Languages',
-      icon: Globe,
+      icon: () => <StackIcon name="usa" className="w-5 h-5" />,
       skills: [
-        { name: 'English', icon: Globe, description: 'Professional working proficiency (C1)' },
-        { name: 'Persian', icon: Globe, description: 'Native proficiency' },
-        { name: 'German', icon: Globe, description: 'Elementary proficiency (A2)' },
-        { name: 'Dutch', icon: Globe, description: 'Elementary proficiency (A1)' }
+        { name: 'English', icon: () => <StackIcon name="usa" className="w-5 h-5" />, description: 'Professional working proficiency (C1)' },
+        { name: 'Persian', icon: () => <StackIcon name="iran" className="w-5 h-5" />, description: 'Native proficiency' },
+        { name: 'German', icon: () => <StackIcon name="germany" className="w-5 h-5" />, description: 'Elementary proficiency (A2)' },
+        { name: 'Dutch', icon: () => <StackIcon name="netherlands" className="w-5 h-5" />, description: 'Elementary proficiency (A1)' }
       ]
   }
 ];
@@ -134,7 +133,9 @@ export default function Skills() {
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-4 mb-2">
                     <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors duration-300">
-                      <category.icon className="h-8 w-8 text-primary" />
+                      <div className="h-8 w-8 text-primary">
+                        <category.icon />
+                      </div>
                     </div>
                     <CardTitle className="text-xl font-bold">{category.name}</CardTitle>
                   </div>
@@ -153,7 +154,9 @@ export default function Skills() {
                               style={{ animationDelay: `${(categoryIndex * 200) + (skillIndex * 100)}ms` }}
                             >
                               <div className="relative">
-                                <skill.icon className="h-12 w-12 text-muted-foreground group-hover/skill:text-primary transition-colors duration-300" />
+                                <div className="h-12 w-12 text-muted-foreground group-hover/skill:text-primary transition-colors duration-300">
+                                  <skill.icon />
+                                </div>
                                 {hoveredSkill === skill.name && (
                                   <div className="absolute -inset-2 bg-primary/20 rounded-full blur animate-pulse" />
                                 )}

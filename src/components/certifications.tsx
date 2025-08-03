@@ -1,5 +1,5 @@
 'use client';
-import { Award, Shield, FileCheck, Calendar, ExternalLink } from 'lucide-react';
+import StackIcon from 'tech-stack-icons';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
@@ -8,82 +8,22 @@ import { useEffect, useState } from 'react';
 
 const certificationData = [
   {
-    name: 'AWS Certified Solutions Architect - Professional',
-    issuer: 'Amazon Web Services',
-    date: 'June 2022',
-    validUntil: 'June 2025',
-    credentialId: 'AWS-ASP-12345',
-    category: 'cloud',
-    url: 'https://www.credly.com/badges/aws-certified-solutions-architect-professional'
-  },
-  {
-    name: 'AWS Certified DevOps Engineer - Professional',
-    issuer: 'Amazon Web Services',
-    date: 'March 2022',
-    validUntil: 'March 2025',
-    credentialId: 'AWS-DEP-12345',
-    category: 'cloud',
-    url: 'https://www.credly.com/badges/aws-certified-devops-engineer-professional'
-  },
-  {
-    name: 'Microsoft Certified: Azure DevOps Engineer Expert',
-    issuer: 'Microsoft',
-    date: 'January 2022',
-    validUntil: 'January 2024',
-    credentialId: 'MS-ADOE-12345',
-    category: 'cloud',
-    url: 'https://learn.microsoft.com/en-us/credentials/'
-  },
-  {
-    name: 'Microsoft Certified: Azure Administrator Associate',
-    issuer: 'Microsoft',
-    date: 'November 2021',
-    validUntil: 'November 2023',
-    credentialId: 'MS-AAA-12345',
-    category: 'cloud',
-    url: 'https://learn.microsoft.com/en-us/credentials/'
-  },
-  {
-    name: 'Certified Kubernetes Application Developer (CKAD)',
-    issuer: 'Cloud Native Computing Foundation',
-    date: 'August 2021',
-    validUntil: 'August 2024',
-    credentialId: 'CNCF-CKAD-12345',
-    category: 'devops',
-    url: 'https://www.cncf.io/certification/ckad/'
-  },
-  {
-    name: 'Certified Kubernetes Administrator (CKA)',
-    issuer: 'Cloud Native Computing Foundation',
-    date: 'July 2021',
-    validUntil: 'July 2024',
-    credentialId: 'CNCF-CKA-12345',
-    category: 'devops',
-    url: 'https://www.cncf.io/certification/cka/'
-  },
-  {
-    name: 'HashiCorp Certified: Terraform Associate',
-    issuer: 'HashiCorp',
-    date: 'May 2021',
-    validUntil: 'May 2023',
-    credentialId: 'HC-TA-12345',
-    category: 'devops',
-    url: 'https://www.hashicorp.com/certification/terraform-associate'
+    name: 'Auto Homemade Pharmacy (Invention)',
+    issuer: 'Self-Certified',
+    date: 'N/A',
+    validUntil: 'N/A',
+    credentialId: 'N/A',
+    category: 'Invention',
+    url: '#'
   }
 ];
 
 const patentData = [
   {
-    title: 'System and Method for Automated Cloud Resource Optimization',
-    number: 'US12345678',
-    issueDate: 'March 2023',
-    description: 'A system that uses machine learning to automatically optimize cloud resource allocation based on usage patterns, reducing costs while maintaining performance.'
-  },
-  {
-    title: 'Secure Data Transfer Protocol for High-Volume Financial Transactions',
-    number: 'EU98765432',
-    issueDate: 'November 2022',
-    description: 'A specialized protocol for securely transferring high volumes of financial transaction data with enhanced encryption and verification mechanisms.'
+    title: 'Smart home pharmacy with mobile medication planning',
+    number: 'N/A',
+    issueDate: 'N/A',
+    description: 'An innovative smart home pharmacy system with mobile medication planning capabilities.'
   }
 ];
 
@@ -152,7 +92,7 @@ export default function Certifications() {
           {/* Certifications */}
           <div className="mb-20">
             <h3 className="text-2xl font-bold mb-8 flex items-center gap-2">
-              <Award className="h-6 w-6 text-primary" />
+              <StackIcon name="award" className="h-6 w-6 text-primary" />
               Professional Certifications
             </h3>
             
@@ -166,7 +106,7 @@ export default function Certifications() {
                   <CardHeader className="pb-2">
                     <div className="flex items-start gap-3 mb-2">
                       <div className="p-2 bg-primary/10 rounded-lg mt-1">
-                        <Shield className="h-5 w-5 text-primary" />
+                        <StackIcon name="shield" className="h-5 w-5 text-primary" />
                       </div>
                       <div>
                         <CardTitle className="text-lg font-bold leading-tight">{cert.name}</CardTitle>
@@ -179,11 +119,11 @@ export default function Certifications() {
                   <CardContent className="pt-4 space-y-4">
                     <div className="flex flex-wrap gap-4 text-sm">
                       <div className="flex items-center gap-1 text-muted-foreground">
-                        <Calendar className="h-4 w-4" />
+                        <StackIcon name="calendar" className="h-4 w-4" />
                         <span>Issued: {cert.date}</span>
                       </div>
                       <div className="flex items-center gap-1 text-muted-foreground">
-                        <FileCheck className="h-4 w-4" />
+                        <StackIcon name="file-check" className="h-4 w-4" />
                         <span>Valid until: {cert.validUntil}</span>
                       </div>
                     </div>
@@ -195,7 +135,7 @@ export default function Certifications() {
                       <Button variant="ghost" size="sm" className="gap-1" asChild>
                         <Link href={cert.url} target="_blank">
                           <span className="text-xs">Verify</span>
-                          <ExternalLink className="h-3 w-3" />
+                          <StackIcon name="external-link" className="h-3 w-3" />
                         </Link>
                       </Button>
                     </div>
@@ -208,7 +148,7 @@ export default function Certifications() {
           {/* Patents */}
           <div>
             <h3 className="text-2xl font-bold mb-8 flex items-center gap-2">
-              <FileCheck className="h-6 w-6 text-primary" />
+              <StackIcon name="file-check" className="h-6 w-6 text-primary" />
               Patents
             </h3>
             
@@ -226,11 +166,11 @@ export default function Certifications() {
                   <CardContent className="space-y-4">
                     <div className="flex flex-wrap gap-4 text-sm">
                       <div className="flex items-center gap-1 text-muted-foreground">
-                        <FileCheck className="h-4 w-4" />
+                        <StackIcon name="file-check" className="h-4 w-4" />
                         <span>Patent No: {patent.number}</span>
                       </div>
                       <div className="flex items-center gap-1 text-muted-foreground">
-                        <Calendar className="h-4 w-4" />
+                        <StackIcon name="calendar" className="h-4 w-4" />
                         <span>Issued: {patent.issueDate}</span>
                       </div>
                     </div>

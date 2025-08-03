@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from './ui/button';
-import { Download, Linkedin, Mail, Github, MapPin, Calendar } from 'lucide-react';
+import StackIcon from 'tech-stack-icons';
 import { useEffect, useState } from 'react';
 
 export default function Hero() {
@@ -39,42 +39,37 @@ export default function Hero() {
           {/* Name and Title */}
           <div className="mb-8">
             <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-4 bg-gradient-to-r from-foreground via-primary to-blue-600 bg-clip-text text-transparent">
-              Masoud Tavakkoli
+              MASOUD TAVAKKOLI
             </h1>
             <div className="flex items-center justify-center gap-2 mb-4">
               <div className="h-px bg-gradient-to-r from-transparent via-primary to-transparent w-20" />
               <p className="text-2xl md:text-3xl text-primary font-bold px-4">
-                AI Solutions Engineer & DevOps Specialist
+                AI Engineer, Technical Leadership, Co-founder, DevOps, SRE, Linux
               </p>
               <div className="h-px bg-gradient-to-r from-transparent via-primary to-transparent w-20" />
             </div>
             <div className="flex flex-wrap justify-center gap-2 mb-4">
-              <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">AWS Certified Solutions Architect</span>
-              <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Azure DevOps Expert</span>
-              <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">ML/AI Integration</span>
+              <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">Technical Leadership</span>
+              <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">DevOps</span>
+              <span className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">SRE</span>
             </div>
           </div>
 
-          {/* Value Proposition */}
-          <p className="max-w-4xl mx-auto text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed font-medium">
-            Building scalable AI platforms and automating the future of cloud infrastructure with a focus on security, reliability, and cost optimization
-          </p>
+          {/* Location */}
+          <div className="flex items-center gap-2 mb-8 text-muted-foreground">
+            <StackIcon name="map-pin" className="h-5 w-5 text-primary" />
+            <span>Dubai, United Arab Emirates</span>
+          </div>
 
-          {/* Key Stats */}
-          <div className="flex flex-wrap justify-center gap-8 mb-10 text-sm md:text-base">
-            <div className="flex items-center gap-2 bg-card/50 backdrop-blur-sm px-4 py-2 rounded-full border border-border/50">
-              <Calendar className="h-4 w-4 text-primary" />
-              <span className="font-semibold text-primary">9+</span>
-              <span className="text-muted-foreground">Years Experience</span>
+          {/* Contact Info */}
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <div className="flex items-center gap-2">
+              <StackIcon name="mail" className="h-4 w-4 text-primary" />
+              <span>mtg1376@gmail.com</span>
             </div>
-            <div className="flex items-center gap-2 bg-card/50 backdrop-blur-sm px-4 py-2 rounded-full border border-border/50">
-              <MapPin className="h-4 w-4 text-primary" />
-              <span className="font-semibold text-primary">4+</span>
-              <span className="text-muted-foreground">Countries</span>
-            </div>
-            <div className="flex items-center gap-2 bg-card/50 backdrop-blur-sm px-4 py-2 rounded-full border border-border/50">
-              <span className="font-semibold text-primary">3+</span>
-              <span className="text-muted-foreground">Industries</span>
+            <div className="flex items-center gap-2">
+              <StackIcon name="phone" className="h-4 w-4 text-primary" />
+              <span>+903273294841</span>
             </div>
           </div>
 
@@ -82,22 +77,22 @@ export default function Hero() {
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" className="bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
               <Link href="#contact">
-                <Mail className="mr-2 h-5 w-5" /> Contact Me
+                <StackIcon name="mail" className="mr-2 h-5 w-5" /> Contact Me
               </Link>
             </Button>
             <Button asChild variant="secondary" size="lg" className="shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
               <Link href="/masoud-tavakkoli-cv.pdf" target="_blank">
-                <Download className="mr-2 h-5 w-5" /> Download CV
+                <StackIcon name="download" className="mr-2 h-5 w-5" /> Download CV
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-              <Link href="https://www.linkedin.com/in/masoud-tavakkoli/" target="_blank">
-                <Linkedin className="mr-2 h-5 w-5" /> LinkedIn
+              <Link href="https://www.linkedin.com/in/promasoud" target="_blank">
+                <StackIcon name="linkedin" className="mr-2 h-5 w-5" /> LinkedIn
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-              <Link href="https://github.com/Masoud-T" target="_blank">
-                <Github className="mr-2 h-5 w-5" /> GitHub
+              <Link href="https://medium.com/@promasoud" target="_blank">
+                <StackIcon name="globe" className="mr-2 h-5 w-5" /> Blog
               </Link>
             </Button>
           </div>

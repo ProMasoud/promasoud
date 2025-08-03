@@ -1,5 +1,5 @@
 'use client';
-import { Mic, Users, BookOpen, Calendar, MapPin, ExternalLink, Award } from 'lucide-react';
+import StackIcon from 'tech-stack-icons';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
@@ -10,81 +10,39 @@ const activitiesData = [
   // Speaking Engagements
   {
     type: 'speaking',
-    title: 'Modern AI Infrastructure at Scale',
-    event: 'AWS re:Invent',
-    location: 'Las Vegas, USA',
-    date: 'November 2023',
-    description: 'Delivered a technical session on architecting scalable infrastructure for AI workloads, focusing on cost optimization and performance tuning for large language models.',
-    url: 'https://reinvent.awsevents.com/'
-  },
-  {
-    type: 'speaking',
-    title: 'DevSecOps in Regulated Industries',
-    event: 'KubeCon + CloudNativeCon',
-    location: 'Amsterdam, Netherlands',
-    date: 'April 2023',
-    description: 'Presented best practices for implementing DevSecOps pipelines in highly regulated industries such as healthcare and finance, with practical examples and case studies.',
-    url: 'https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/'
-  },
-  {
-    type: 'speaking',
-    title: 'Multi-Cloud Strategy for Enterprise',
-    event: 'Microsoft Build',
-    location: 'Seattle, USA',
-    date: 'May 2022',
-    description: 'Panel discussion on implementing effective multi-cloud strategies for enterprise organizations, focusing on governance, security, and cost management.',
-    url: 'https://build.microsoft.com/'
+    title: 'Technical Leadership in Modern Software Development',
+    event: 'Internal Company Conference',
+    location: 'Dubai, UAE',
+    date: '2023',
+    description: 'Presented best practices for technical leadership in modern software development environments.',
+    url: 'https://www.linkedin.com/in/promasoud'
   },
   
   // Community Contributions
   {
     type: 'community',
-    title: 'Kubernetes SIG Contributor',
-    organization: 'Cloud Native Computing Foundation',
-    date: '2021 - Present',
-    description: 'Active contributor to Kubernetes Special Interest Groups (SIGs), focusing on security and multi-cluster management. Contributed to documentation and code improvements.',
-    url: 'https://kubernetes.io/community/'
-  },
-  {
-    type: 'community',
     title: 'Technical Blog Author',
-    organization: 'Medium & Dev.to',
+    organization: 'Medium',
     date: '2020 - Present',
-    description: 'Regular author of technical articles on cloud architecture, DevOps practices, and AI integration, with over 50,000 monthly readers and featured in prominent tech publications.',
-    url: 'https://medium.com/'
+    description: 'Regular author of technical articles on software development, DevOps practices, and technical leadership.',
+    url: 'https://medium.com/@promasoud'
   },
   {
     type: 'community',
-    title: 'Open Source Maintainer',
+    title: 'Open Source Contributor',
     organization: 'GitHub',
     date: '2019 - Present',
-    description: 'Maintain several open source projects related to infrastructure automation and security scanning, with combined 2,000+ stars and 100+ contributors.',
-    url: 'https://github.com/masoudtavakkoli'
+    description: 'Contribute to open source projects related to web development and DevOps tools.',
+    url: 'https://github.com/promasoud'
   },
   
   // Professional Development
   {
     type: 'professional',
-    title: 'AI/ML for Cloud Infrastructure Workshop',
-    organization: 'Stanford University',
-    date: 'August 2023',
-    description: 'Completed intensive workshop on applying machine learning techniques to optimize cloud infrastructure, focusing on predictive scaling and anomaly detection.',
-    credential: 'Certificate of Completion'
-  },
-  {
-    type: 'professional',
-    title: 'Advanced Security in Distributed Systems',
-    organization: 'SANS Institute',
-    date: 'March 2023',
-    description: 'Completed specialized training on implementing advanced security measures in distributed systems, with focus on threat modeling and zero-trust architecture.',
-    credential: 'SANS Security Certification'
-  },
-  {
-    type: 'professional',
-    title: 'Leadership in Technical Organizations',
-    organization: 'Harvard Business School Online',
-    date: 'September 2022',
-    description: 'Completed executive education program focused on leadership strategies for technical professionals transitioning to management roles in technology organizations.',
+    title: 'Technical Leadership Training',
+    organization: 'Coursera',
+    date: '2022',
+    description: 'Completed specialized training on technical leadership and team management.',
     credential: 'Certificate of Completion'
   }
 ];
@@ -118,13 +76,13 @@ export default function Activities() {
   const getIcon = (type: string) => {
     switch (type) {
       case 'speaking':
-        return Mic;
+        return () => <StackIcon name="mic" className="w-5 h-5" />;
       case 'community':
-        return Users;
+        return () => <StackIcon name="users" className="w-5 h-5" />;
       case 'professional':
-        return BookOpen;
+        return () => <StackIcon name="book" className="w-5 h-5" />;
       default:
-        return Calendar;
+        return () => <StackIcon name="calendar" className="w-5 h-5" />;
     }
   };
 
@@ -192,7 +150,9 @@ export default function Activities() {
                     <div className="flex items-start justify-between mb-2">
                       <div className="flex items-start gap-3">
                         <div className="p-2 bg-primary/10 rounded-lg mt-1">
-                          <IconComponent className="h-5 w-5 text-primary" />
+                          <div className="h-5 w-5 text-primary">
+                            <IconComponent />
+                          </div>
                         </div>
                         <div>
                           <Badge variant="outline" className="mb-2 capitalize">
@@ -210,12 +170,12 @@ export default function Activities() {
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         {activity.type === 'speaking' ? (
                           <>
-                            <Users className="h-4 w-4" />
+                            <StackIcon name="users" className="h-4 w-4" />
                             <span>{activity.event}</span>
                           </>
                         ) : (
                           <>
-                            <Users className="h-4 w-4" />
+                            <StackIcon name="users" className="h-4 w-4" />
                             <span>{activity.organization}</span>
                           </>
                         )}
@@ -223,19 +183,19 @@ export default function Activities() {
                       
                       {activity.location && (
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <MapPin className="h-4 w-4" />
+                          <StackIcon name="map-pin" className="h-4 w-4" />
                           <span>{activity.location}</span>
                         </div>
                       )}
                       
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Calendar className="h-4 w-4" />
+                        <StackIcon name="calendar" className="h-4 w-4" />
                         <span>{activity.date}</span>
                       </div>
                       
                       {activity.credential && (
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <Award className="h-4 w-4" />
+                          <StackIcon name="award" className="h-4 w-4" />
                           <span>{activity.credential}</span>
                         </div>
                       )}
@@ -250,7 +210,7 @@ export default function Activities() {
                         <Button variant="ghost" size="sm" className="gap-1 text-primary" asChild>
                           <Link href={activity.url} target="_blank">
                             <span className="text-xs">Learn More</span>
-                            <ExternalLink className="h-3 w-3" />
+                            <StackIcon name="external-link" className="h-3 w-3" />
                           </Link>
                         </Button>
                       </div>

@@ -1,31 +1,29 @@
 'use client';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Sparkles, Target, Users, Globe, Award, TrendingUp } from 'lucide-react';
+import StackIcon from 'tech-stack-icons';
 import { useEffect, useState } from 'react';
 
-const aboutText = `Innovative AI Solutions Engineer and DevOps Specialist with 9+ years of experience in designing, developing, and deploying high-availability, scalable, and secure infrastructures for SaaS applications, AI platforms, and high-traffic systems. Proven track record of leading cross-functional teams across multiple countries (UK, Netherlands, Germany, Iran) to deliver complex technical solutions from concept to production.
-
-Specialized in cloud architecture (AWS, Azure), containerization, infrastructure automation, and AI/ML integration. Passionate about implementing DevSecOps practices and optimizing infrastructure for cost efficiency while maintaining robust security postures. Demonstrated ability to reduce infrastructure costs by up to 70% while improving system reliability and performance.`;
+const aboutText = `With over 8 years of experience in software engineering and DevOps, I've had the opportunity to work across multiple industries, including cryptocurrency, education, and healthcare. This diverse background has given me a deep understanding of business logic and the ability to deliver high-quality solutions that drive success. Throughout my career, I've thrived in both leadership and collaborative roles, having worked with over five international teams. This experience has equipped me with the skills to navigate and resolve the unique challenges that come with global collaboration. I'm passionate about leveraging technology to solve business problems creatively. Whether it's exploring new frameworks or diving into different technologies, I view innovation as a daily hobby, not just a job. If you're looking for a reliable, creative, and experienced software engineer who understands the bigger picture, I'd love to connect!`;
 
 const coreAreas = [
-  { name: 'AI/LLM Integration & ML Ops', icon: Sparkles },
-  { name: 'DevOps & Infrastructure Automation', icon: Target },
-  { name: 'Cloud Architecture (AWS & Azure)', icon: Globe },
-  { name: 'Infrastructure Security & DevSecOps', icon: Award },
-  { name: 'Technical Leadership & Team Management', icon: Users },
-  { name: 'CI/CD Pipeline Optimization', icon: TrendingUp },
-  { name: 'Containerization & Kubernetes', icon: Target },
-  { name: 'High-Availability System Design', icon: Globe }
+  { name: 'AI/LLM Integration & ML Ops', icon: 'sparkles' },
+  { name: 'DevOps & Infrastructure Automation', icon: 'target' },
+  { name: 'Cloud Architecture (AWS & Azure)', icon: 'globe' },
+  { name: 'Infrastructure Security & DevSecOps', icon: 'award' },
+  { name: 'Technical Leadership & Team Management', icon: 'users' },
+  { name: 'CI/CD Pipeline Optimization', icon: 'trending-up' },
+  { name: 'Containerization & Kubernetes', icon: 'target' },
+  { name: 'High-Availability System Design', icon: 'globe' }
 ];
 
 const achievements = [
-  { number: '10,000+', label: 'LEO360.AI Users Globally', icon: Users },
-  { number: '70%', label: 'Infrastructure Cost Reduction', icon: TrendingUp },
-  { number: '99.99%', label: 'System Uptime Achieved', icon: Award },
-  { number: '$100M+', label: 'Daily Transactions Secured', icon: Globe },
-  { number: '4+', label: 'Countries Worked In', icon: Globe },
-  { number: '20+', label: 'Enterprise Projects Delivered', icon: Target }
+  { number: '10,000+', label: 'LEO360.AI Users Globally', icon: 'users' },
+  { number: '70%', label: 'Infrastructure Cost Reduction', icon: 'trending-up' },
+  { number: '99.99%', label: 'System Uptime Achieved', icon: 'award' },
+  { number: '$100M+', label: 'Daily Transactions Secured', icon: 'globe' },
+  { number: '4+', label: 'Countries Worked In', icon: 'globe' },
+  { number: '20+', label: 'Enterprise Projects Delivered', icon: 'target' }
 ];
 
 export default function About() {
@@ -73,7 +71,7 @@ export default function About() {
               {/* Core Expertise */}
               <div>
                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                  <Sparkles className="h-6 w-6 text-primary" />
+                  <StackIcon name="sparkles" className="h-6 w-6 text-primary" />
                   Core Expertise
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -83,7 +81,9 @@ export default function About() {
                       className={`flex items-center gap-3 p-4 bg-card/50 backdrop-blur-sm rounded-xl border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 ${isVisible ? 'animate-in slide-in-from-left' : ''}`}
                       style={{ animationDelay: `${index * 100}ms` }}
                     >
-                      <area.icon className="h-5 w-5 text-primary flex-shrink-0" />
+                      <div className="h-5 w-5 text-primary flex-shrink-0">
+                        <StackIcon name={area.icon} className="h-5 w-5" />
+                      </div>
                       <span className="font-medium text-sm">{area.name}</span>
                     </div>
                   ))}
@@ -126,7 +126,7 @@ export default function About() {
             {/* Right Column - Achievements */}
             <div className="space-y-6">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <Award className="h-6 w-6 text-primary" />
+                <StackIcon name="award" className="h-6 w-6 text-primary" />
                 Key Achievements
               </h3>
               
@@ -140,7 +140,7 @@ export default function About() {
                     <CardContent className="p-6">
                       <div className="flex items-center gap-4">
                         <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                          <achievement.icon className="h-6 w-6 text-primary" />
+                          <StackIcon name={achievement.icon} className="h-6 w-6 text-primary" />
                         </div>
                         <div>
                           <div className="text-2xl font-bold text-primary mb-1">

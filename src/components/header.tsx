@@ -1,5 +1,5 @@
 'use client';
-import { Code, Menu } from 'lucide-react';
+import StackIcon from 'tech-stack-icons';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Button } from './ui/button';
@@ -34,7 +34,7 @@ export default function Header() {
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2 font-bold text-lg">
-            <Code className="h-6 w-6 text-primary" />
+            <StackIcon name="code" className="h-6 w-6 text-primary" />
             <span>Masoud Tavakkoli</span>
           </Link>
 
@@ -54,7 +54,7 @@ export default function Header() {
             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
+                  <StackIcon name="menu" className="h-6 w-6" />
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
               </SheetTrigger>

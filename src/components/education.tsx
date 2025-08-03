@@ -1,25 +1,25 @@
-import { GraduationCap, Calendar, MapPin, Award, BookOpen } from 'lucide-react';
+import StackIcon from 'tech-stack-icons';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 
 const educationData = [
   {
-    degree: 'Master of Science, Software Engineering',
-    institution: 'University of London',
-    location: 'London, United Kingdom',
-    period: '2019 - 2021',
-    description: 'Specialized in Cloud Computing and Distributed Systems with focus on scalable infrastructure design and implementation.',
-    achievements: ['Graduated with Distinction', 'Research on Kubernetes Operators for AI/ML workloads'],
-    courses: ['Advanced Cloud Architecture', 'Distributed Systems', 'Machine Learning Engineering', 'Software Design Patterns', 'DevOps Methodologies']
-  },
-  {
-    degree: 'Bachelor of Science, Computer Science',
+    degree: "Bachelor's degree in Computer/Information Technology Administration and Management",
     institution: 'University of Tabriz',
     location: 'Tabriz, Iran',
-    period: '2014 - 2018',
-    description: 'Comprehensive computer science education with focus on software engineering principles, algorithms, and data structures.',
-    achievements: ['Top 5% of graduating class', 'Best Final Year Project Award'],
-    courses: ['Data Structures & Algorithms', 'Database Systems', 'Operating Systems', 'Software Engineering', 'Computer Networks']
+    period: '2015 - 2019',
+    description: 'Comprehensive education in computer and information technology administration and management.',
+    achievements: [],
+    courses: []
+  },
+  {
+    degree: 'Diploma of Education in Mathematics and Physics',
+    institution: 'Imam Khomeini High School',
+    location: 'Tabriz, Iran',
+    period: '2011 - 2015',
+    description: 'Focused education in mathematics and physics.',
+    achievements: [],
+    courses: []
   }
 ];
 
@@ -55,11 +55,11 @@ export default function Education() {
               <CardContent className="pt-4 space-y-4">
                 <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6">
                   <div className="flex items-center gap-2 text-muted-foreground">
-                    <BookOpen className="w-4 h-4 text-primary" />
+                    <StackIcon name="book" className="w-4 h-4 text-primary" />
                     <span className="font-medium">{edu.institution}</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
-                    <MapPin className="w-4 h-4 text-primary" />
+                    <StackIcon name="map-pin" className="w-4 h-4 text-primary" />
                     <span>{edu.location}</span>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ export default function Education() {
                 {edu.achievements.length > 0 && (
                   <div className="space-y-2">
                     <h4 className="font-semibold flex items-center gap-2">
-                      <Award className="w-4 h-4 text-primary" /> Achievements
+                      <StackIcon name="award" className="w-4 h-4 text-primary" /> Achievements
                     </h4>
                     <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground pl-2">
                       {edu.achievements.map((achievement, i) => (
@@ -82,7 +82,7 @@ export default function Education() {
                 {edu.courses.length > 0 && (
                   <div>
                     <h4 className="font-semibold mb-2 flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-primary" /> Key Courses
+                      <StackIcon name="calendar" className="w-4 h-4 text-primary" /> Key Courses
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {edu.courses.map((course, i) => (

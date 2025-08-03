@@ -1,98 +1,170 @@
 'use client';
-import { Briefcase, Calendar, MapPin, TrendingUp, Users, Award, Zap } from 'lucide-react';
+import StackIcon from 'tech-stack-icons';
 import { Badge } from './ui/badge';
 import { Card, CardContent } from './ui/card';
 import { useEffect, useState } from 'react';
 
 const experienceData = [
   {
-    role: 'AI Solutions Engineer',
-    company: 'LyonsGlobal',
-    period: 'May 2022 – Present',
-    location: 'London, UK (Remote)',
-    icon: Zap,
+    role: 'Technical Director',
+    company: 'Lyons Global',
+    period: 'November 2023 - Present',
+    location: 'California, United States',
+    icon: () => <StackIcon name="zap" className="w-5 h-5" />,
     description:
-      'Lead the architecture, development, and deployment of LEO360.AI, a next-generation AI telehealth platform serving over 10,000 users globally. Responsible for designing and implementing the entire cloud infrastructure on AWS, integrating Large Language Models for advanced diagnostics, and managing GPU-accelerated workloads while ensuring HIPAA compliance and maintaining 99.99% uptime.',
+      'Lead cross-functional teams and drive strategic IT initiatives to enhance global healthcare delivery. Oversee technical projects, ensure compliance with industry standards, and align IT operations with business goals.',
     achievements: [
-      'Architected and deployed LEO360.AI platform to 10,000+ users across 15+ countries',
-      'Designed and implemented a secure, HIPAA-compliant cloud infrastructure on AWS',
-      'Integrated multiple LLMs (OpenAI, Anthropic, Llama) with custom RAG systems',
-      'Achieved 99.99% uptime through robust infrastructure design and monitoring',
-      'Reduced infrastructure costs by 45% through optimization and automation',
-      'Led a distributed team across 3 time zones, implementing agile methodologies'
+      'Achieved significant cost savings, improved operational efficiency, and delivered scalable and secure systems',
+      'Spearheaded regulatory compliance (HIPAA, ISO 27001, DHA), achieving global healthcare and data security standards',
+      'Directed IT infrastructure redesigns, achieving a 70% reduction in operational costs',
+      'Built and led a high-performing IT development team across DevOps, software engineering, and project management',
+      'Increased developer and manager satisfaction by 40% through automation and seamless workflows',
+      'Developed IT roadmaps aligned with business objectives',
+      'Conducted audits and risk assessments for HIPAA, ISO 27001, MOH, and DHA standards',
+      'Designed scalable systems and deployed automation solutions supporting global healthcare delivery'
     ],
-    tags: ['AI/ML', 'LLM Integration', 'AWS', 'Python', 'DevOps', 'Kubernetes', 'Global Team'],
+    tags: ['Technical Leadership', 'Healthcare', 'HIPAA', 'ISO 27001', 'DHA', 'IT Strategy', 'Team Management'],
+  },
+  {
+    role: 'DevOps Engineer',
+    company: 'Lyons Global',
+    period: 'June 2022 - November 2023',
+    location: 'California, United States',
+    icon: () => <StackIcon name="users" className="w-5 h-5" />,
+    description:
+      'Contributed to digital health solutions with a mission to deliver gold-standard healthcare globally. Enhanced development processes, system reliability, and integration of digital platforms and healthcare services.',
+    achievements: [
+      'Focused on automation, scalability, and continuous improvement',
+      'Supported global digital health transformation with innovative, scalable solutions'
+    ],
+    tags: ['DevOps', 'Healthcare', 'Automation', 'Scalability', 'Digital Health'],
+  },
+  {
+    role: 'VP of G2TECH',
+    company: 'G2TECH',
+    period: 'June 2022 - Present',
+    location: 'Ankara, Turkey',
+    icon: () => <StackIcon name="award" className="w-5 h-5" />,
+    description:
+      'Assembled a dynamic team to revolutionize software development. Delivered 100+ projects, showcasing commitment to excellence.',
+    achievements: [
+      'Created streamlined workflows, empowering peak team performance',
+      'Implemented work-life balance systems',
+      'Grew from solo founder to a team of 45'
+    ],
+    tags: ['Leadership', 'Project Management', 'Team Building', 'Software Development'],
   },
   {
     role: 'DevOps Technical Lead',
-    company: 'G2Tech',
-    period: 'March 2019 – April 2022',
-    location: 'Amsterdam, Netherlands (Remote)',
-    icon: Users,
+    company: 'G2TECH',
+    period: 'June 2022 - May 2024',
+    location: 'Ankara, Turkey',
+    icon: () => <StackIcon name="trending-up" className="w-5 h-5" />,
     description:
-      'Led a team of 5 engineers to design, build, and maintain a multi-cloud SaaS infrastructure supporting 50+ enterprise clients. Architected and implemented CI/CD pipelines that reduced deployment times by 80% while improving reliability. Spearheaded infrastructure optimization initiatives that reduced costs by 70% through automation, right-sizing, and implementing modern DevOps practices.',
+      'Implemented comprehensive logging and monitoring systems (Sentry, EFK, Prometheus). Optimized CI/CD pipelines for faster deployments.',
     achievements: [
-      'Reduced infrastructure costs by 70% through cloud optimization and automation',
-      'Designed and implemented CI/CD pipelines that cut deployment times by 80%',
-      'Led migration from monolithic architecture to microservices using Kubernetes',
-      'Implemented infrastructure as code using Terraform across AWS and Azure',
-      'Established DevSecOps practices, reducing security vulnerabilities by 65%',
-      'Mentored and managed a team of 5 engineers across different experience levels'
+      'Utilized Ansible and Terraform for enhanced stability and performance',
+      'Automated tasks using shell scripts',
+      'Operated secure in-house systems (Gitlab, Jira, Confluence, Rocket.Chat, Uptimekuma)'
     ],
-    tags: ['Leadership', 'CI/CD', 'Multi-Cloud', 'Azure', 'AWS', 'Kubernetes', 'Terraform', 'SaaS'],
+    tags: ['DevOps', 'CI/CD', 'Terraform', 'Ansible', 'Monitoring', 'Automation'],
   },
   {
-    role: 'Crypto DevOps Engineer',
-    company: 'Bit24',
-    period: 'June 2018 – February 2019',
-    location: 'Dubai, UAE',
-    icon: Award,
+    role: 'Co-Founder',
+    company: 'GO2TRain',
+    period: 'June 2021 - Present',
+    location: 'Turkey',
+    icon: () => <StackIcon name="briefcase" className="w-5 h-5" />,
     description:
-      'Engineered a highly available and secure infrastructure for a cryptocurrency exchange processing over $100M in daily transactions. Designed and implemented comprehensive security protocols, automated monitoring systems, and disaster recovery solutions to protect assets and prevent threats for millions of users while ensuring 24/7 platform availability.',
+      'Provided free, high-quality language courses globally. Developed immersive video lessons, interactive quizzes, and downloadable materials.',
     achievements: [
-      'Secured platform handling $100M+ in daily cryptocurrency transactions',
-      'Designed and implemented high-availability infrastructure supporting millions of users',
-      'Achieved zero-downtime deployments through blue-green deployment strategy',
-      'Implemented comprehensive security measures including WAF, IDS/IPS, and encryption',
-      'Created automated monitoring and alerting systems with 99.99% uptime SLA',
-      'Developed and documented disaster recovery procedures with 15-minute RTO'
+      'Offered tailored content in English, French, German, Korean, and more',
+      'Created a seamless and accessible language learning experience'
     ],
-    tags: ['Security', 'High-Availability', 'Cryptocurrency', 'Docker', 'Ansible', 'Monitoring', 'Disaster Recovery'],
+    tags: ['Co-Founder', 'Education', 'Language Learning', 'Content Development'],
   },
   {
-    role: 'Fullstack Developer',
+    role: 'Technical Lead',
+    company: 'GO2TR Immigration Consulting Company',
+    period: 'September 2021 - July 2022',
+    location: 'Iran',
+    icon: () => <StackIcon name="zap" className="w-5 h-5" />,
+    description:
+      'Migrated main website from Laravel+Vue CMS to WordPress. Developed internal CRM (BMS) connecting all organizational stakeholders using Laravel and Nuxt.',
+    achievements: [
+      'Successfully migrated website to new platform',
+      'Developed comprehensive internal CRM system'
+    ],
+    tags: ['Technical Leadership', 'CRM', 'Laravel', 'Nuxt', 'WordPress'],
+  },
+  {
+    role: 'Software Engineer',
+    company: 'GO2TR Immigration Consulting Company',
+    period: 'June 2018 - October 2021',
+    location: 'Iran',
+    icon: () => <StackIcon name="award" className="w-5 h-5" />,
+    description:
+      'Migrated main website from Laravel+Vue CMS to WordPress. Developed internal CRM (BMS) connecting all organizational stakeholders using Laravel and Nuxt.',
+    achievements: [
+      'Successfully migrated website to new platform',
+      'Developed comprehensive internal CRM system'
+    ],
+    tags: ['Software Engineering', 'Laravel', 'Vue', 'WordPress', 'CRM'],
+  },
+  {
+    role: 'DevOps Engineer',
+    company: 'Romina',
+    period: 'February 2021 - July 2022',
+    location: 'Iran',
+    icon: () => <StackIcon name="users" className="w-5 h-5" />,
+    description:
+      'Enhanced infrastructure, performance, and scalability. Dockerized products, streamlined deployments.',
+    achievements: [
+      'Built real-time monitoring and logging tools',
+      'Managed 5 high-traffic services, supporting over 1 million users',
+      'Oversaw infrastructure for bit24.cash and exchaino.com',
+      'Built DevOps team and fostered innovation'
+    ],
+    tags: ['DevOps', 'Docker', 'Monitoring', 'High-Traffic', 'Infrastructure'],
+  },
+  {
+    role: 'Software Engineer',
     company: 'Arkatech',
-    period: 'August 2016 – May 2018',
-    location: 'Tehran, Iran',
-    icon: TrendingUp,
+    period: 'April 2018 - October 2020',
+    location: 'Tabriz',
+    icon: () => <StackIcon name="trending-up" className="w-5 h-5" />,
     description:
-      'Developed and maintained web applications across the full software development lifecycle (SDLC) for various clients in finance, e-commerce, and healthcare sectors. Utilized a diverse tech stack including PHP (Laravel, CodeIgniter), JavaScript (jQuery, Vue.js), and MySQL. Collaborated with cross-functional teams to gather requirements, design solutions, and deliver high-quality applications.',
+      'Developed projects in Smart Schools, Cargo Management, and Store Management Systems. Used Laravel, Express, React Native, Socket.io.',
     achievements: [
-      'Delivered 15+ web applications on time and within budget for diverse clients',
-      'Improved application performance by 40% through code optimization and caching',
-      'Mentored 4 junior developers, accelerating their technical growth',
-      'Implemented responsive design principles, improving mobile user experience',
-      'Reduced database query times by 60% through optimization techniques',
-      'Developed and maintained internal development standards and documentation'
+      'Contributed throughout project lifecycle'
     ],
-    tags: ['Fullstack', 'PHP', 'Laravel', 'JavaScript', 'Vue.js', 'MySQL', 'SDLC', 'Responsive Design'],
+    tags: ['Software Engineering', 'Laravel', 'Express', 'React Native', 'Socket.io'],
   },
   {
-    role: 'Software Development Intern',
-    company: 'Sazmand',
-    period: 'September 2015 – July 2016',
-    location: 'Tehran, Iran',
-    icon: Briefcase,
+    role: 'Software Developer',
+    company: 'Saymantech',
+    period: 'March 2018 - June 2019',
+    location: 'Tabriz',
+    icon: () => <StackIcon name="briefcase" className="w-5 h-5" />,
     description:
-      'Gained foundational experience in software development through a structured internship program. Contributed to internal tools development, assisted senior developers with coding tasks, and participated in all phases of the software development lifecycle while learning core programming concepts and best practices.',
+      'Managed real-time IoT communication and reporting panel.',
     achievements: [
-      'Built 5+ internal tools that improved team productivity by 25%',
-      'Mastered core programming fundamentals including OOP, data structures, and algorithms',
-      'Participated in all phases of the SDLC from requirements gathering to deployment',
-      'Assisted in database design and implementation for internal projects',
-      'Received "Outstanding Intern" recognition for exceptional contributions'
+      'Contributed to development of IoT solutions'
     ],
-    tags: ['Internship', 'Web Development', 'PHP', 'JavaScript', 'MySQL', 'SDLC'],
+    tags: ['Software Development', 'IoT', 'Real-time Communication'],
+  },
+  {
+    role: 'Junior Web Developer',
+    company: 'Rahkar Company',
+    period: 'May 2016 - November 2017',
+    location: 'Tabriz',
+    icon: () => <StackIcon name="award" className="w-5 h-5" />,
+    description:
+      'Developed web applications using CodeIgniter and Angular.js.',
+    achievements: [
+      'Built and maintained web applications'
+    ],
+    tags: ['Web Development', 'CodeIgniter', 'Angular.js'],
   },
 ];
 
@@ -148,7 +220,9 @@ export default function Experience() {
                   <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-8 z-10">
                     <div className="relative">
                       <div className="w-16 h-16 bg-gradient-to-r from-primary to-blue-600 rounded-full flex items-center justify-center shadow-lg">
-                        <item.icon className="w-8 h-8 text-white" />
+                        <div className="w-8 h-8 text-white">
+                          <item.icon />
+                        </div>
                       </div>
                       <div className="absolute -inset-2 bg-primary/20 rounded-full blur animate-pulse" />
                     </div>
@@ -168,16 +242,16 @@ export default function Experience() {
                             {item.role}
                           </h3>
                           <div className="flex items-center gap-2 text-primary font-semibold mb-2">
-                            <Briefcase className="w-4 h-4" />
+                            <StackIcon name="briefcase" className="w-4 h-4" />
                             <span>{item.company}</span>
                           </div>
                           <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
                             <div className="flex items-center gap-1">
-                              <Calendar className="w-4 h-4" />
+                              <StackIcon name="calendar" className="w-4 h-4" />
                               <span>{item.period}</span>
                             </div>
                             <div className="flex items-center gap-1">
-                              <MapPin className="w-4 h-4" />
+                              <StackIcon name="map-pin" className="w-4 h-4" />
                               <span>{item.location}</span>
                             </div>
                           </div>
