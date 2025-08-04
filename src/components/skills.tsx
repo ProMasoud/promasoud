@@ -8,7 +8,7 @@ const skillCategories = [
     icon: () => <TechIcon name="typescript" className="w-5 h-5" />,
     skills: [
       { name: 'Python', icon: () => <TechIcon name="python" className="w-5 h-5" />, description: 'Expert in Python for AI/ML, web backends, data analysis, and automation scripts.' },
-      { name: 'Go', icon: () => <TechIcon name="golang" className="w-5 h-5" />, description: 'Proficient in Go for building high-performance, concurrent systems and microservices.' },
+      { name: 'TypeScript', icon: () => <TechIcon name="typescript" className="w-5 h-5" />, description: 'Proficient in TypeScript for building high-performance, concurrent systems and microservices.' },
       { name: 'Bash', icon: () => <TechIcon name="bash" className="w-5 h-5" />, description: 'Advanced shell scripting for automation, system administration, and DevOps workflows.' },
       { name: 'JavaScript', icon: () => <TechIcon name="javascript" className="w-5 h-5" />, description: 'Frontend and backend development with Node.js, React, and Next.js.' },
       { name: 'PHP', icon: () => <TechIcon name="php" className="w-5 h-5" />, description: 'Experience with legacy and modern PHP applications and frameworks.' },
@@ -24,6 +24,7 @@ const skillCategories = [
       { name: 'GCP', icon: () => <TechIcon name="gcloud" className="w-5 h-5" />, description: 'Google Cloud Platform: GKE, Compute Engine, Cloud Storage, BigQuery, and more.' },
       { name: 'Digital Ocean', icon: () => <TechIcon name="digitalocean" className="w-5 h-5" />, description: 'Experience with Digital Ocean droplets, Kubernetes, and managed databases.' },
       { name: 'OVH', icon: () => <TechIcon name="ovh" className="w-5 h-5" />, description: 'OVH cloud infrastructure management and optimization.' },
+      { name: 'Hetzner', icon: () => <TechIcon name="hetzner" className="w-5 h-5" />, description: 'Hetzner cloud infrastructure management and optimization.' },
     ],
   },
   {
@@ -36,17 +37,18 @@ const skillCategories = [
       { name: 'Ansible', icon: () => <TechIcon name="ansible" className="w-5 h-5" />, description: 'Configuration management and automated provisioning with playbooks and roles.' },
       { name: 'CI/CD', icon: () => <TechIcon name="github-actions" className="w-5 h-5" />, description: 'GitHub Actions, GitLab CI, Jenkins, and Azure DevOps pipelines.' },
       { name: 'Linux', icon: () => <TechIcon name="linux" className="w-5 h-5" />, description: 'System administration, performance tuning, and security hardening.' },
+      { name: 'Minio', icon: () => <TechIcon name="minio" className="w-5 h-5" />, description: 'Object storage system for storing unstructured data.' },
     ],
   },
   {
     name: 'AI/ML',
     icon: () => <TechIcon name="openai" className="w-5 h-5" />,
     skills: [
-        { name: 'LLM Integration', icon: () => <TechIcon name="openai" className="w-5 h-5" />, description: 'Integrating and fine-tuning Large Language Models (OpenAI, Anthropic, Llama, etc).' },
-        { name: 'ML Ops', icon: () => <TechIcon name="mlflow" className="w-5 h-5" />, description: 'End-to-end ML pipelines, model deployment, and monitoring.' },
-        { name: 'GPU Management', icon: () => <TechIcon name="nvidia" className="w-5 h-5" />, description: 'Managing GPU resources for AI/ML workloads on cloud and on-premise.' },
-        { name: 'Vector DBs', icon: () => <TechIcon name="pinecone" className="w-5 h-5" />, description: 'Working with vector databases for AI applications (Pinecone, Weaviate, etc).' },
-        { name: 'RAG Systems', icon: () => <TechIcon name="langchain" className="w-5 h-5" />, description: 'Building Retrieval Augmented Generation systems for enterprise applications.' },
+      { name: 'LLM Integration', icon: () => <TechIcon name="openai" className="w-5 h-5" />, description: 'Integrating and fine-tuning Large Language Models (OpenAI, Anthropic, Llama, etc).' },
+      { name: 'ML Ops', icon: () => <TechIcon name="mlflow" className="w-5 h-5" />, description: 'End-to-end ML pipelines, model deployment, and monitoring.' },
+      { name: 'GPU Management', icon: () => <TechIcon name="nvidia" className="w-5 h-5" />, description: 'Managing GPU resources for AI/ML workloads on cloud and on-premise.' },
+      { name: 'Vector DBs', icon: () => <TechIcon name="pinecone" className="w-5 h-5" />, description: 'Working with vector databases for AI applications (Pinecone, Weaviate, etc).' },
+      { name: 'RAG Systems', icon: () => <TechIcon name="langchain" className="w-5 h-5" />, description: 'Building Retrieval Augmented Generation systems for enterprise applications.' },
     ],
   },
   {
@@ -58,30 +60,32 @@ const skillCategories = [
       { name: 'MongoDB', icon: () => <TechIcon name="mongodb" className="w-5 h-5" />, description: 'NoSQL database for flexible data schemas and distributed systems.' },
       { name: 'Redis', icon: () => <TechIcon name="redis" className="w-5 h-5" />, description: 'In-memory data store for caching, messaging, and real-time applications.' },
       { name: 'Elasticsearch', icon: () => <TechIcon name="elasticsearch" className="w-5 h-5" />, description: 'Full-text search and analytics engine for log management.' },
-      { name: 'DynamoDB', icon: () => <TechIcon name="aws-dynamodb" className="w-5 h-5" />, description: 'AWS NoSQL database for high-performance applications.' },
     ],
   },
   {
-      name: 'Soft Skills',
-      icon: () => <TechIcon name="linkedin" className="w-5 h-5" />,
-      skills: [
-        { name: 'Technical Leadership', icon: () => <TechIcon name="linkedin" className="w-5 h-5" />, description: 'Leading and mentoring technical teams across multiple countries and cultures.' },
-        { name: 'DevOps', icon: () => <TechIcon name="docker" className="w-5 h-5" />, description: 'Experience with DevOps practices, CI/CD pipelines, and infrastructure automation.' },
-        { name: 'Project Management', icon: () => <TechIcon name="jira" className="w-5 h-5" />, description: 'Experience managing projects from conception to delivery with agile methodologies.' },
-        { name: 'English', icon: () => <TechIcon name="usa" className="w-5 h-5" />, description: 'Professional working proficiency' },
-        { name: 'Persian', icon: () => <TechIcon name="iran" className="w-5 h-5" />, description: 'Native/Bilingual proficiency' },
-        { name: 'Azerbaijani', icon: () => <TechIcon name="azerbaijan" className="w-5 h-5" />, description: 'Native/Bilingual proficiency' }
-      ]
+    name: 'Soft Skills',
+    icon: () => <TechIcon name="linkedin" className="w-5 h-5" />,
+    skills: [
+      { name: 'Rapid Learner', icon: () => <TechIcon name="linkedin" className="w-5 h-5" />, description: 'Quickly master new technologies, frameworks, and domains, especially in fast-changing fields like AI and DevOps.' },
+      { name: 'Innovative Problem-Solver', icon: () => <TechIcon name="docker" className="w-5 h-5" />, description: 'Consistently deliver creative solutions to complex technical and operational challenges.' },
+      { name: 'Cross-Functional Communication', icon: () => <TechIcon name="jira" className="w-5 h-5" />, description: 'Bridge gaps between technical, product, and business teams; translate requirements into actionable tasks.' },
+      { name: 'Team Leadership', icon: () => <TechIcon name="usa" className="w-5 h-5" />, description: 'Inspire and guide diverse, international teams—fostering trust, productivity, and a culture of continuous improvement.' },
+      { name: 'Collaboration', icon: () => <TechIcon name="iran" className="w-5 h-5" />, description: 'Thrive in remote, multicultural environments and work seamlessly with stakeholders across all levels.' },
+      { name: 'Adaptability', icon: () => <TechIcon name="azerbaijan" className="w-5 h-5" />, description: 'Comfortable pivoting between roles, projects, and technologies as priorities evolve.' },
+      { name: 'Ownership & Accountability', icon: () => <TechIcon name="azerbaijan" className="w-5 h-5" />, description: 'Take responsibility for outcomes, deliver on commitments, and uphold high quality and reliability standards.' },
+      { name: 'Attention to Detail', icon: () => <TechIcon name="azerbaijan" className="w-5 h-5" />, description: 'Ensure robust security, compliance, and operational excellence, even under tight deadlines.' },
+      { name: 'Empathy', icon: () => <TechIcon name="azerbaijan" className="w-5 h-5" />, description: 'Support and mentor colleagues; foster positive relationships in and out of the workplace.' },
+      { name: 'Resilience', icon: () => <TechIcon name="azerbaijan" className="w-5 h-5" />, description: 'Stay calm, resourceful, and productive in high-pressure or ambiguous situations.' }
+    ]
   },
   {
-      name: 'Languages',
-      icon: () => <TechIcon name="usa" className="w-5 h-5" />,
-      skills: [
-        { name: 'English', icon: () => <TechIcon name="usa" className="w-5 h-5" />, description: 'Professional working proficiency (C1)' },
-        { name: 'Persian', icon: () => <TechIcon name="iran" className="w-5 h-5" />, description: 'Native proficiency' },
-        { name: 'German', icon: () => <TechIcon name="germany" className="w-5 h-5" />, description: 'Elementary proficiency (A2)' },
-        { name: 'Dutch', icon: () => <TechIcon name="netherlands" className="w-5 h-5" />, description: 'Elementary proficiency (A1)' }
-      ]
+    name: 'Languages',
+    icon: () => <TechIcon name="usa" className="w-5 h-5" />,
+    skills: [
+      { name: 'English', icon: () => <TechIcon name="usa" className="w-5 h-5" />, description: 'Professional working proficiency (C1)' },
+      { name: 'Azerbaijani', icon: () => <TechIcon name="azerbaijan" className="w-5 h-5" />, description: 'Native proficiency' },
+      { name: 'Persian', icon: () => <TechIcon name="iran" className="w-5 h-5" />, description: 'Native proficiency' },
+    ]
   }
 ];
 
@@ -119,66 +123,41 @@ export default function Skills() {
             </p>
           </div>
 
-          {/* Skills Categories */}
-          <div className="space-y-12">
+          {/* Skills Categories - Minimal Chip Layout */}
+          <div className="space-y-8">
             {skillCategories.map((category, categoryIndex) => (
-              <div 
+              <div
                 key={category.name}
-                className={`bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl p-6 shadow-lg ${isVisible ? 'animate-in fade-in-50' : 'opacity-0'}`}
-                style={{ animationDelay: `${categoryIndex * 150}ms` }}
+                className={`bg-black/20 backdrop-blur-sm rounded-lg p-6 ${isVisible ? 'animate-in fade-in-50' : 'opacity-0'}`}
+                style={{ animationDelay: `${categoryIndex * 100}ms` }}
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <div className="h-6 w-6 text-primary flex items-center justify-center">
-                      <category.icon />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold text-white">{category.name}</h3>
-                </div>
-                
-                <div className="h-px w-full bg-gradient-to-r from-primary/30 to-transparent mb-5" />
-                
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div 
+                <h3 className="text-lg font-bold text-white mb-4">{category.name}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span
                       key={skill.name}
-                      className="group relative flex flex-col items-center gap-2 p-3 rounded-lg border border-white/5 hover:border-primary/30 bg-black/30 hover:bg-black/50 transition-all duration-200"
+                      className="px-3 py-1.5 text-sm bg-gradient-to-r from-purple-900/50 to-blue-900/50 text-white rounded-full border border-white/10 hover:from-purple-800/60 hover:to-blue-800/60 transition-all duration-200 cursor-default"
                       title={skill.description}
                     >
-                      <div className="h-8 w-8 text-white/70 group-hover:text-primary transition-colors duration-200 flex items-center justify-center">
-                        <skill.icon />
-                      </div>
-                      <span className="text-xs font-medium text-center text-white/80 group-hover:text-white transition-colors duration-200">
-                        {skill.name}
-                      </span>
-                    </div>
+                      {skill.name}
+                    </span>
                   ))}
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Skills Summary */}
-          <div className="mt-16">
-            <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl p-8 max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4 text-white text-center">
-                Always Learning, Always Growing
-              </h3>
-              <p className="text-white/80 text-lg leading-relaxed text-center">
-                Technology evolves rapidly, and so do I. With a passion for continuous learning and 
-                hands-on experience across diverse projects, I stay at the forefront of innovation 
-                to deliver cutting-edge solutions.
-              </p>
-              <div className="mt-6 flex flex-wrap justify-center gap-2">
-                <span className="text-xs bg-primary/10 text-white px-3 py-1 rounded-full font-medium">AWS Certified Solutions Architect</span>
-                <span className="text-xs bg-primary/10 text-white px-3 py-1 rounded-full font-medium">AWS Certified Developer</span>
-                <span className="text-xs bg-primary/10 text-white px-3 py-1 rounded-full font-medium">Azure DevOps Expert</span>
-                <span className="text-xs bg-primary/10 text-white px-3 py-1 rounded-full font-medium">Azure Administrator</span>
-                <span className="text-xs bg-primary/10 text-white px-3 py-1 rounded-full font-medium">Kubernetes CKAD</span>
-                <span className="text-xs bg-primary/10 text-white px-3 py-1 rounded-full font-medium">+7 More Certifications</span>
-              </div>
+          {/* Skills Summary - Minimal Chips */}
+          {/* <div className="mt-12 pt-6 border-t border-white/10">
+            <div className="flex flex-wrap justify-center gap-2">
+              <span className="text-xs bg-gradient-to-r from-purple-900/50 to-blue-900/50 text-white px-3 py-1.5 rounded-full border border-white/10">AWS Certified Solutions Architect</span>
+              <span className="text-xs bg-gradient-to-r from-purple-900/50 to-blue-900/50 text-white px-3 py-1.5 rounded-full border border-white/10">AWS Certified Developer</span>
+              <span className="text-xs bg-gradient-to-r from-purple-900/50 to-blue-900/50 text-white px-3 py-1.5 rounded-full border border-white/10">Azure DevOps Expert</span>
+              <span className="text-xs bg-gradient-to-r from-purple-900/50 to-blue-900/50 text-white px-3 py-1.5 rounded-full border border-white/10">Azure Administrator</span>
+              <span className="text-xs bg-gradient-to-r from-purple-900/50 to-blue-900/50 text-white px-3 py-1.5 rounded-full border border-white/10">Kubernetes CKAD</span>
+              <span className="text-xs bg-gradient-to-r from-purple-900/50 to-blue-900/50 text-white px-3 py-1.5 rounded-full border border-white/10">+7 More Certifications</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

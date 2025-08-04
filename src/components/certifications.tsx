@@ -70,30 +70,48 @@ export default function Certifications() {
           </div>
 
           {/* Category Filter */}
-          <div className="flex justify-center flex-wrap gap-2 mb-12">
+          <div className="flex justify-center flex-wrap gap-3 mb-12">
             <Button 
-              variant={activeCategory === null ? "default" : "outline"} 
+              variant="ghost"
               onClick={() => setActiveCategory(null)}
-              className="rounded-full"
+              className={`rounded-full px-6 py-2 transition-all duration-300 ${activeCategory === null 
+                ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium shadow-md' 
+                : 'bg-black/40 text-white hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-blue-600/20'}`}
             >
               All
             </Button>
-            {categories.map(category => (
-              <Button 
-                key={category} 
-                variant={activeCategory === category ? "default" : "outline"}
-                onClick={() => setActiveCategory(category)}
-                className="rounded-full capitalize"
-              >
-                {category}
-              </Button>
-            ))}
+            {categories.map(category => {
+              // Define gradient colors based on category
+              let gradientClasses = '';
+              if (category === 'Invention') {
+                gradientClasses = 'from-amber-600 to-orange-600';
+              } else if (category === 'Patent') {
+                gradientClasses = 'from-blue-600 to-cyan-600';
+              } else if (category === 'Certification') {
+                gradientClasses = 'from-emerald-600 to-blue-600';
+              } else {
+                gradientClasses = 'from-pink-600 to-purple-600';
+              }
+              
+              return (
+                <Button 
+                  key={category} 
+                  variant="ghost"
+                  onClick={() => setActiveCategory(category)}
+                  className={`rounded-full px-6 py-2 transition-all duration-300 ${activeCategory === category 
+                    ? `bg-gradient-to-r ${gradientClasses} text-white font-medium shadow-md` 
+                    : 'bg-black/40 text-white hover:bg-gradient-to-r hover:from-gray-800 hover:to-gray-700'}`}
+                >
+                  {category}
+                </Button>
+              );
+            })}
           </div>
 
           {/* Certifications */}
           <div className="mb-20">
-            <h3 className="text-2xl font-bold mb-8 flex items-center gap-2">
-              <Award className="h-6 w-6 text-primary" />
+            <h3 className="text-2xl font-bold mb-8 flex items-center gap-2 text-white bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+              <Award className="h-6 w-6 text-blue-400" />
               Professional Certifications
             </h3>
             
@@ -110,7 +128,7 @@ export default function Certifications() {
                         <Shield className="h-5 w-5 text-primary" />
                       </div>
                       <div>
-                        <CardTitle className="text-lg font-bold leading-tight">{cert.name}</CardTitle>
+                        <CardTitle className="text-lg font-bold leading-tight text-white">{cert.name}</CardTitle>
                         <p className="text-sm text-muted-foreground">{cert.issuer}</p>
                       </div>
                     </div>
@@ -148,8 +166,8 @@ export default function Certifications() {
 
           {/* Patents */}
           <div>
-            <h3 className="text-2xl font-bold mb-8 flex items-center gap-2">
-              <FileCheck className="h-6 w-6 text-primary" />
+            <h3 className="text-2xl font-bold mb-8 flex items-center gap-2 text-white bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">
+              <FileCheck className="h-6 w-6 text-orange-400" />
               Patents
             </h3>
             
@@ -161,7 +179,7 @@ export default function Certifications() {
                   style={{ animationDelay: `${(index + filteredCertifications.length) * 100}ms` }}
                 >
                   <CardHeader>
-                    <CardTitle className="text-xl font-bold">{patent.title}</CardTitle>
+                    <CardTitle className="text-xl font-bold text-white">{patent.title}</CardTitle>
                   </CardHeader>
                   
                   <CardContent className="space-y-4">

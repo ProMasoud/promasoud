@@ -116,24 +116,40 @@ export default function Activities() {
           </div>
 
           {/* Filter Buttons */}
-          <div className="flex justify-center flex-wrap gap-2 mb-12">
+          <div className="flex justify-center flex-wrap gap-3 mb-12">
             <Button 
-              variant={activeFilter === null ? "default" : "outline"} 
+              variant="ghost"
               onClick={() => setActiveFilter(null)}
-              className="rounded-full"
+              className={`rounded-full px-6 py-2 transition-all duration-300 ${activeFilter === null 
+                ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium shadow-md' 
+                : 'bg-black/40 text-white hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-blue-600/20'}`}
             >
               All Activities
             </Button>
-            {activityTypes.map(type => (
-              <Button 
-                key={type} 
-                variant={activeFilter === type ? "default" : "outline"}
-                onClick={() => setActiveFilter(type)}
-                className="rounded-full capitalize"
-              >
-                {type === 'speaking' ? 'Speaking' : type === 'community' ? 'Community' : 'Professional'}
-              </Button>
-            ))}
+            {activityTypes.map(type => {
+              // Define gradient colors based on activity type
+              let gradientClasses = '';
+              if (type === 'speaking') {
+                gradientClasses = 'from-pink-600 to-purple-600';
+              } else if (type === 'community') {
+                gradientClasses = 'from-blue-600 to-cyan-600';
+              } else {
+                gradientClasses = 'from-emerald-600 to-blue-600';
+              }
+              
+              return (
+                <Button 
+                  key={type} 
+                  variant="ghost"
+                  onClick={() => setActiveFilter(type)}
+                  className={`rounded-full px-6 py-2 transition-all duration-300 ${activeFilter === type 
+                    ? `bg-gradient-to-r ${gradientClasses} text-white font-medium shadow-md` 
+                    : 'bg-black/40 text-white hover:bg-gradient-to-r hover:from-gray-800 hover:to-gray-700'}`}
+                >
+                  {type === 'speaking' ? 'Speaking' : type === 'community' ? 'Community' : 'Professional'}
+                </Button>
+              );
+            })}
           </div>
 
           {/* Activities Grid */}

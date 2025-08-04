@@ -271,7 +271,7 @@ export default function Experience() {
 
                         {/* Key Achievements */}
                         <div className="mb-4">
-                          <h4 className="font-semibold mb-2 text-primary">Key Achievements:</h4>
+                          <h4 className="font-semibold mb-2 bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">Key Achievements:</h4>
                           <ul className="space-y-1">
                             {item.achievements.map((achievement, achievementIndex) => (
                               <li key={achievementIndex} className="flex items-start gap-2 text-sm text-muted-foreground">

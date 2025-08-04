@@ -18,7 +18,7 @@ const coreAreas = [
 ];
 
 const achievements = [
-  { number: '10,000+', label: 'LEO360.AI Users Globally', icon: 'users' },
+  { number: '30M+', label: 'Users affected by my projects Globally', icon: 'users' },
   { number: '70%', label: 'Infrastructure Cost Reduction', icon: 'trending-up' },
   { number: '99.99%', label: 'System Uptime Achieved', icon: 'award' },
   { number: '$100M+', label: 'Daily Transactions Secured', icon: 'globe' },
@@ -72,8 +72,8 @@ export default function About() {
               <div>
                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-2 text-white">
                   <div className="flex items-center justify-center h-6 w-6">
-                  <TechIcon name="sparkles" className="h-6 w-6 text-white" />
-                </div>
+                    <TechIcon name="sparkles" className="h-6 w-6 text-white" />
+                  </div>
                   Core Expertise
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -115,11 +115,11 @@ export default function About() {
                       <div className="text-3xl font-bold text-primary mb-1">12+</div>
                       <div className="text-sm text-white/80">Certifications</div>
                     </div>
-                    <div className="w-px bg-border" />
-                    <div>
+                    {/* <div className="w-px bg-border" /> */}
+                    {/* <div>
                       <div className="text-3xl font-bold text-primary mb-1">2</div>
                       <div className="text-sm text-white/80">Patents</div>
-                    </div>
+                    </div> */}
                   </div>
                 </CardContent>
               </Card>
@@ -127,9 +127,9 @@ export default function About() {
 
             {/* Right Column - Achievements */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">
                 <div className="flex items-center justify-center h-6 w-6">
-                  <TechIcon name="award" className="h-6 w-6 text-primary" />
+                  <TechIcon name="award" className="h-6 w-6 text-orange-400" />
                 </div>
                 Key Achievements
               </h3>

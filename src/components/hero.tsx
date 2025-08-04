@@ -16,22 +16,22 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen flex items-center justify-center sharp-gradient overflow-hidden">
       {/* AI Grid Background */}
       <div className="absolute inset-0 ai-grid" />
-      
+
       {/* Neural Network Pattern */}
       <div className="neural-network" />
-      
+
       {/* Floating Cloud Elements */}
       <div className="cloud-bg" />
       <div className="cloud-bg" />
       <div className="cloud-bg" />
       <div className="cloud-bg" />
-      
+
       {/* Sharp geometric elements */}
       <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-transparent via-white/10 to-transparent" />
       <div className="absolute top-0 right-0 w-2 h-full bg-gradient-to-b from-transparent via-white/10 to-transparent" />
-      
+
       <div className="container mx-auto px-4 md:px-8 text-center relative z-10">
         <div className={`flex flex-col items-center ${isVisible ? 'animate-sharp-fade' : 'opacity-0'}`}>
           {/* Profile Image with sharp styling */}
@@ -39,7 +39,7 @@ export default function Hero() {
             <div className="absolute -inset-6 sharp-border rounded-full opacity-50 group-hover:opacity-80 transition-all duration-500" />
             <div className="absolute -inset-4 bg-gradient-to-r from-white/20 via-white/10 to-white/20 rounded-full blur-sm opacity-40 group-hover:opacity-60 transition-all duration-500" />
             <Image
-              src="https://placehold.co/200x200.png"
+              src="/me.png"
               alt="Masoud Tavakkoli"
               width={200}
               height={200}
@@ -83,11 +83,11 @@ export default function Hero() {
           <div className="flex flex-wrap justify-center gap-6 mb-8">
             <div className="flex items-center gap-2 bg-white/5 px-4 py-2 sharp-border backdrop-blur-sm">
               <TechIcon name="mail" className="h-4 w-4 text-white" />
-              <span className="text-white/90">mtg1376@gmail.com</span>
+              <span className="text-white/90">promasoud@outlook.com</span>
             </div>
             <div className="flex items-center gap-2 bg-white/5 px-4 py-2 sharp-border backdrop-blur-sm">
               <TechIcon name="phone" className="h-4 w-4 text-white" />
-              <span className="text-white/90">+903273294841</span>
+              <span className="text-white/90">+905373294841</span>
             </div>
           </div>
 
@@ -116,13 +116,13 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center sharp-border backdrop-blur-sm">
-            <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse" />
-          </div>
-          <div className="text-white/50 text-xs mt-2 tracking-widest">SCROLL</div>
+      </div>
+      {/* Scroll indicator - moved outside container for proper positioning */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20 pointer-events-none">
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center sharp-border backdrop-blur-sm">
+          <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse" />
         </div>
+        <div className="text-white/50 text-xs mt-2 tracking-widest">SCROLL</div>
       </div>
     </section>
   );

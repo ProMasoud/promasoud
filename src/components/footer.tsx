@@ -5,10 +5,10 @@ const socialLinks = [
   {
     name: 'LinkedIn',
     icon: 'linkedin',
-    url: 'https://www.linkedin.com/in/masoud-tavakkoli/',
+    url: 'https://www.linkedin.com/in/promasoud/',
   },
-  { name: 'GitHub', icon: 'github', url: 'https://github.com/Masoud-T' },
-  { name: 'Email', icon: 'mail', url: 'mailto:masoud.tavakkoli.dev@gmail.com' },
+  { name: 'GitHub', icon: 'github', url: 'https://github.com/promasoud' },
+  { name: 'Email', icon: 'mail', url: 'mailto:promasoud@outlook.com' },
 ];
 
 export default function Footer() {
