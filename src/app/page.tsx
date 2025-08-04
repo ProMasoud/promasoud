@@ -20,16 +20,16 @@ export default function Home() {
     const handleMouseMove = (e: MouseEvent) => {
       const x = e.clientX / window.innerWidth;
       const y = e.clientY / window.innerHeight;
-      
+
       // Update gradient positions based on mouse movement
       document.documentElement.style.setProperty('--mouse-x', x.toString());
       document.documentElement.style.setProperty('--mouse-y', y.toString());
     };
-    
+
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
-  
+
   return (
     <div className="flex min-h-screen flex-col dark relative overflow-hidden">
       {/* Dynamic colorful gradient backgrounds */}
@@ -38,18 +38,18 @@ export default function Home() {
         <div className="absolute top-0 left-0 w-[50vw] h-[40vh] bg-gradient-to-br from-purple-900/20 to-transparent rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute top-1/3 right-0 w-[40vw] h-[40vh] bg-gradient-to-bl from-blue-900/20 to-transparent rounded-full blur-3xl transform translate-x-1/3"></div>
         <div className="absolute bottom-0 left-1/4 w-[50vw] h-[40vh] bg-gradient-to-tr from-emerald-900/20 to-transparent rounded-full blur-3xl"></div>
-        
+
         {/* Secondary smaller gradient accents */}
         <div className="absolute top-1/4 right-1/4 w-[15vw] h-[15vh] bg-gradient-to-br from-pink-900/15 to-transparent rounded-full blur-2xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 left-1/3 w-[20vw] h-[20vh] bg-gradient-to-tr from-amber-900/15 to-transparent rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
-        
+        <div className="absolute bottom-1/3 left-1/3 w-[20vw] h-[20vh] bg-gradient-to-tr from-amber-900/15 to-transparent rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+
         {/* Grid overlay */}
         <div className="absolute inset-0 ai-grid opacity-30"></div>
-        
+
         {/* Neural network effect */}
         <div className="absolute inset-0 neural-network opacity-40"></div>
       </div>
-      
+
       {/* Content */}
       <div className="relative z-10 w-full">
         <Header />
@@ -67,10 +67,10 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-900/5 to-transparent"></div>
             <Experience />
           </div>
-          <div className="relative">
+          {/* <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-pink-900/5 to-transparent"></div>
             <Projects />
-          </div>
+          </div> */}
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-900/5 to-transparent"></div>
             <Education />
@@ -79,10 +79,10 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-900/5 to-transparent"></div>
             <Certifications />
           </div>
-          <div className="relative">
+          {/* <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/5 to-transparent"></div>
             <Activities />
-          </div>
+          </div> */}
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-violet-900/5 to-transparent"></div>
             <Contact />
@@ -90,11 +90,11 @@ export default function Home() {
         </main>
         <Footer />
       </div>
-      
+
       {/* Floating particles effect */}
       <div className="absolute inset-0 pointer-events-none z-[5] opacity-30">
         {Array.from({ length: 15 }).map((_, i) => (
-          <div 
+          <div
             key={i}
             className="absolute w-1 h-1 rounded-full bg-white/30"
             style={{
